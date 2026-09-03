@@ -1,0 +1,49 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  white-space: nowrap;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.variant_blue {
+  background-color: rgba(0, 113, 227, 0.15);
+  color: #2997ff;
+  border-color: rgba(0, 113, 227, 0.3);
+}
+
+.variant_cyan {
+  background-color: rgba(48, 176, 199, 0.15);
+  color: #64d2ff;
+  border-color: rgba(48, 176, 199, 0.3);
+}
+
+.variant_purple {
+  background-color: rgba(175, 82, 222, 0.15);
+  color: #d084ff;
+  border-color: rgba(175, 82, 222, 0.3);
+}
+
+.variant_orange {
+  background-color: rgba(255, 149, 0, 0.15);
+  color: #ff9f0a;
+  border-color: rgba(255, 149, 0, 0.3);
+}
+
+.variant_green {
+  background-color: rgba(48, 209, 88, 0.15);
+  color: #30d158;
+  border-color: rgba(48, 209, 88, 0.3);
+}
+
+.variant_subtle {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #a1a1a6;
+  border-color: rgba(255, 255, 255, 0.1);
+}

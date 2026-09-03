@@ -1,0 +1,318 @@
+.globalNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.navScrolled {
+  background-color: rgba(22, 22, 23, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+}
+
+.appleLogoBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f5f5f7;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+  user-select: none;
+}
+
+.appleLogoBtn:hover {
+  opacity: 1;
+}
+
+.appleGlyph {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.appleBrandText {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #86868b;
+  margin-top: 1px;
+}
+
+.navLinksList {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navItem {
+  font-size: 12px;
+  color: #cccccc;
+  letter-spacing: -0.01em;
+  opacity: 0.82;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  padding: 4px 0;
+}
+
+.navItem:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.navUtilities {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.utilityBtn {
+  color: #cccccc;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.utilityBtn:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.mobileHamburger {
+  display: none;
+  color: #cccccc;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+/* Search Flyout Overlay */
+.searchFlyout {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  background-color: rgba(22, 22, 23, 0.98);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 30px 24px 40px;
+  animation: appleSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes appleSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.searchInner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.searchBarIcon {
+  color: #86868b;
+}
+
+.searchBarInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.searchBarInput::placeholder {
+  color: #6e6e73;
+}
+
+.searchCloseBtn {
+  color: #86868b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.searchCloseBtn:hover {
+  color: #ffffff;
+}
+
+.quickLinksGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quickLinksTitle {
+  font-size: 11px;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.quickLinksList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quickLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #f5f5f7;
+  padding: 6px 0;
+  text-align: left;
+  transition: color 0.15s ease;
+}
+
+.quickLinkItem:hover {
+  color: #2997ff;
+}
+
+.quickLinkArrow {
+  color: #86868b;
+}
+
+/* Mobile Drawer */
+.mobileDrawer {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  z-index: 9998;
+  padding: 24px 32px 60px;
+  overflow-y: auto;
+  animation: appleSlideDown 0.25s ease-out;
+}
+
+.mobileLinksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileMenuLink {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f5f5f7;
+  letter-spacing: -0.02em;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobileMenuLink:hover {
+  color: #2997ff;
+}
+
+.mobileSubdomainCTA {
+  margin-top: 20px;
+}
+
+.mobileLaunchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0071e3;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Apple Announcement Ribbon */
+.announcementRibbon {
+  margin-top: 44px;
+  background-color: #1d1d1f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.ribbonContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ribbonText {
+  font-size: 13px;
+  color: #f5f5f7;
+  letter-spacing: -0.01em;
+}
+
+.ribbonLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 13px;
+  color: #2997ff;
+  transition: opacity 0.15s ease;
+}
+
+.ribbonLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 820px) {
+  .navLinksList {
+    display: none;
+  }
+
+  .mobileHamburger {
+    display: flex;
+  }
+
+  .navContainer {
+    padding: 0 16px;
+  }
+}

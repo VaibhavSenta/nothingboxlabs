@@ -1,0 +1,162 @@
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBlue {
+  color: #2997ff;
+}
+
+.iconCyan {
+  color: #64d2ff;
+}
+
+.iconPurple {
+  color: #bf5af2;
+}
+
+.iconOrange {
+  color: #ff9f0a;
+}
+
+.headerMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.category {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cardBody {
+  margin-bottom: 20px;
+}
+
+.productTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a1a1a6;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.purpose {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.featuresPreview {
+  background-color: #121216;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.previewTitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bulletDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0071e3;
+}
+
+.featureText {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.subdomainBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.subdomainLabel {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.subdomainUrl {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #2997ff;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}

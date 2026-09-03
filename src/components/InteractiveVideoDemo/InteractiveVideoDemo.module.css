@@ -1,0 +1,375 @@
+.container {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: rgba(20, 20, 24, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.videoIconWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(255, 149, 0, 0.15);
+  border: 1px solid rgba(255, 149, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoIcon {
+  color: #ff9f0a;
+}
+
+.headerTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.headerSubtitle {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.headerBadges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.videoStage {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.screenFrame {
+  background-color: #000000;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.screenBackdrop {
+  height: 240px;
+  background: radial-gradient(circle at center, #1b1b22 0%, #08080a 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.filmNoiseLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+.screenCenterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  z-index: 2;
+}
+
+.centerVideoIcon {
+  color: #ff9f0a;
+}
+
+.cinemaMovieTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.cinemaFileMeta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.seekPill {
+  position: absolute;
+  bottom: 14px;
+  background-color: rgba(20, 20, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #f5f5f7;
+}
+
+.greenCheck {
+  color: #30d158;
+}
+
+.controlBar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background-color: #121216;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cinemaPlayBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ff9f0a;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timelineScrubber {
+  flex: 1;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.scrubberBufferedRange {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 72%;
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.scrubberCurrentProgress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ff9f0a;
+  width: 42%;
+  transition: width 0.2s ease-out;
+}
+
+.scrubberPlaying {
+  animation: videoScrub 15s infinite linear;
+}
+
+@keyframes videoScrub {
+  0% {
+    width: 42%;
+  }
+  100% {
+    width: 72%;
+  }
+}
+
+.timeCounter {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.fullscreenBtn {
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+.fullscreenBtn:hover {
+  color: var(--text-primary);
+}
+
+/* Telemetry Grid */
+.telemetryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.telemetryCard {
+  background-color: #16161b;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cpuIcon {
+  color: #2997ff;
+}
+
+.platformIcon {
+  color: #bf5af2;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.memoryGauges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gaugeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gaugeLabelRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.heapValue {
+  font-family: var(--font-mono);
+  color: #30d158;
+  font-weight: 600;
+}
+
+.opfsBufferValue {
+  font-family: var(--font-mono);
+  color: #ff9f0a;
+  font-weight: 600;
+}
+
+.gaugeBarTrack {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.heapFill {
+  width: 14%;
+  height: 100%;
+  background-color: #30d158;
+}
+
+.opfsFill {
+  width: 84%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff9500, #ff3b30);
+}
+
+.gaugeHelper {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+/* Platform Switcher */
+.platformSelectorRow {
+  display: flex;
+  gap: 8px;
+}
+
+.platformBtn {
+  flex: 1;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #101014;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.platformBtnActive {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+}
+
+.quotaDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #101014;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.quotaRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.quotaLabel {
+  color: var(--text-secondary);
+}
+
+.quotaValueGreen {
+  color: #30d158;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.quotaValueCyan {
+  color: #64d2ff;
+  font-weight: 500;
+}
+
+.quotaValuePurple {
+  color: #bf5af2;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .telemetryGrid {
+    grid-template-columns: 1fr;
+  }
+}

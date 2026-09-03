@@ -1,0 +1,291 @@
+.carouselSection {
+  padding: 80px 24px 100px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  max-width: 1280px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.headerInfo {
+  max-width: 700px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff9f0a;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #f5f5f7;
+  margin-bottom: 10px;
+}
+
+.subhead {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #86868b;
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navArrowBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.navArrowBtn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.filterToolbar {
+  max-width: 1280px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.categoryPills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pillBtn {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background-color: #16161a;
+  color: #86868b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+}
+
+.pillBtn:hover {
+  color: #f5f5f7;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pillBtnActive {
+  background-color: #f5f5f7;
+  color: #000000;
+  border-color: #f5f5f7;
+  font-weight: 500;
+}
+
+.pillBtnActive:hover {
+  color: #000000;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #16161a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  width: 240px;
+}
+
+.searchIcon {
+  color: #86868b;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f5f5f7;
+  font-size: 13px;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #6e6e73;
+}
+
+/* Slider Track (Apple Filmstrip) */
+.sliderTrack {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 24px 30px;
+  scrollbar-width: none;
+}
+
+.sliderTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.streamCard {
+  flex: 0 0 320px;
+  background-color: #121216;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.streamCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
+.coverTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.portLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #86868b;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.statusTag {
+  font-size: 10px;
+  font-weight: 600;
+  color: #30d158;
+  background-color: rgba(48, 209, 88, 0.12);
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.coverCenter {
+  margin-bottom: 16px;
+}
+
+.globeWrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: rgba(0, 113, 227, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.globeIcon {
+  color: #2997ff;
+}
+
+.itemName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f5f5f7;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.itemCategory {
+  font-size: 12px;
+  color: #a1a1a6;
+}
+
+.coverBottom {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.itemDesc {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #86868b;
+  margin-bottom: 12px;
+}
+
+.endpointPill {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #64d2ff;
+  background-color: rgba(100, 210, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.cardActions {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+}
+
+.launchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2997ff;
+  background-color: rgba(0, 113, 227, 0.12);
+  border: 1px solid rgba(0, 113, 227, 0.25);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+}
+
+.launchBtn:hover {
+  background-color: #0071e3;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .streamCard {
+    flex: 0 0 280px;
+  }
+}

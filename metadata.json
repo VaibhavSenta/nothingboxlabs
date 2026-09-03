@@ -1,0 +1,6 @@
+{
+  "name": "NothingBox Labs",
+  "description": "Next-generation web applications ecosystem engineered with Apple-inspired precision and browser-native performance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

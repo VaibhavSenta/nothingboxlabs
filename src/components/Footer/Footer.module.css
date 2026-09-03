@@ -1,0 +1,168 @@
+.footer {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 24px 30px;
+  color: #86868b;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Footnotes */
+.footnotesSection {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+.footnotesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footnoteItem {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #6e6e73;
+}
+
+/* Breadcrumb */
+.breadcrumbBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+.appleLogoGlyph {
+  font-size: 15px;
+  color: #f5f5f7;
+}
+
+.breadcrumbChevron {
+  color: #424245;
+}
+
+.breadcrumbItem {
+  color: #86868b;
+}
+
+.breadcrumbCurrent {
+  color: #f5f5f7;
+}
+
+/* 5-Column Directory Grid */
+.directoryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.directoryCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colHeader {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f5f5f7;
+  letter-spacing: -0.01em;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colLink {
+  color: #86868b;
+  font-size: 12px;
+  transition: color 0.15s ease;
+}
+
+.colLink:hover {
+  color: #f5f5f7;
+  text-decoration: underline;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.copyrightText {
+  color: #6e6e73;
+  font-size: 11px;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  color: #86868b;
+  font-size: 11px;
+  transition: color 0.15s ease;
+}
+
+.legalLink:hover {
+  color: #f5f5f7;
+  text-decoration: underline;
+}
+
+.legalDivider {
+  color: #424245;
+  font-size: 10px;
+}
+
+.localeSelector {
+  color: #86868b;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.localeSelector:hover {
+  color: #f5f5f7;
+}
+
+@media (max-width: 840px) {
+  .directoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .directoryGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
