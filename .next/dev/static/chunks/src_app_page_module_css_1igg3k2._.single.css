@@ -1,0 +1,14 @@
+/* [project]/src/app/page.module.css [app-client] (css) */
+.page-module___8aEwW__main {
+  background-color: var(--bg-primary);
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+.page-module___8aEwW__productShowcasesWrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_app_page_module_css_1igg3k2._.single.css.map*/

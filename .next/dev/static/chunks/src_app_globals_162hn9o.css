@@ -1,0 +1,87 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --bg-primary: #fff;
+  --bg-secondary: #fbfbfd;
+  --bg-tertiary: #f5f5f7;
+  --bg-elevated: #fff;
+  --bg-glass: #ffffffd1;
+  --bg-glass-hover: #f5f5f7f2;
+  --border-subtle: #00000014;
+  --border-active: #00000029;
+  --border-highlight: #0000000a;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --text-inverted: #fff;
+  --accent-apple-blue: #0071e3;
+  --accent-apple-blue-hover: #0077ed;
+  --accent-cyan: #0288d1;
+  --accent-purple: #af52de;
+  --accent-orange: #f56300;
+  --accent-green: #34c759;
+  --accent-red: #ff3b30;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --transition-fast: .15s cubic-bezier(.2, .8, .2, 1);
+  --transition-smooth: .3s cubic-bezier(.2, .8, .2, 1);
+  --transition-apple: .45s cubic-bezier(.16, 1, .3, 1);
+  --header-height: 52px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-secondary);
+  max-width: 100vw;
+  color: var(--text-primary);
+  font-family: var(--font-system);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d2d7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b6;
+}
+
+/*# sourceMappingURL=src_app_globals_162hn9o.css.map*/

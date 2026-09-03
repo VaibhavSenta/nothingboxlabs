@@ -1,0 +1,376 @@
+/* [project]/src/components/InteractiveVideoDemo/InteractiveVideoDemo.module.css [app-client] (css) */
+.InteractiveVideoDemo-module__QjZibG__container {
+  border-radius: var(--radius-lg);
+  background-color: #fff;
+  border: 1px solid #00000014;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #0000000f;
+}
+
+.InteractiveVideoDemo-module__QjZibG__header {
+  background-color: #f5f5f7;
+  border-bottom: 1px solid #00000014;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__titleGroup {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__videoIconWrap {
+  background-color: #ff950026;
+  border: 1px solid #ff95004d;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__videoIcon {
+  color: #ff9f0a;
+}
+
+.InteractiveVideoDemo-module__QjZibG__headerTitle {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__headerSubtitle {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__headerBadges {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__videoStage {
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__screenFrame {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background-color: #000;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
+
+.InteractiveVideoDemo-module__QjZibG__screenBackdrop {
+  background: radial-gradient(circle, #1b1b22 0%, #08080a 100%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.InteractiveVideoDemo-module__QjZibG__filmNoiseLayer {
+  opacity: .15;
+  pointer-events: none;
+  background-image: radial-gradient(#fff 1px, #0000 1px);
+  background-size: 16px 16px;
+  position: absolute;
+  inset: 0;
+}
+
+.InteractiveVideoDemo-module__QjZibG__screenCenterInfo {
+  text-align: center;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__centerVideoIcon {
+  color: #ff9f0a;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cinemaMovieTitle {
+  color: var(--text-primary);
+  letter-spacing: -.01em;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cinemaFileMeta {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__seekPill {
+  -webkit-backdrop-filter: blur(12px);
+  color: #f5f5f7;
+  background-color: #141418d9;
+  border: 1px solid #ffffff1f;
+  border-radius: 9999px;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 11px;
+  display: flex;
+  position: absolute;
+  bottom: 14px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__greenCheck {
+  color: #30d158;
+}
+
+.InteractiveVideoDemo-module__QjZibG__controlBar {
+  border-top: 1px solid var(--border-subtle);
+  background-color: #121216;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cinemaPlayBtn {
+  color: #000;
+  background-color: #ff9f0a;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__timelineScrubber {
+  cursor: pointer;
+  background-color: #00000014;
+  border-radius: 3px;
+  flex: 1;
+  height: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.InteractiveVideoDemo-module__QjZibG__scrubberBufferedRange {
+  background-color: #00000029;
+  width: 72%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.InteractiveVideoDemo-module__QjZibG__scrubberCurrentProgress {
+  background-color: #ff9f0a;
+  width: 42%;
+  transition: width .2s ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.InteractiveVideoDemo-module__QjZibG__scrubberPlaying {
+  animation: 15s linear infinite InteractiveVideoDemo-module__QjZibG__videoScrub;
+}
+
+@keyframes InteractiveVideoDemo-module__QjZibG__videoScrub {
+  0% {
+    width: 42%;
+  }
+
+  100% {
+    width: 72%;
+  }
+}
+
+.InteractiveVideoDemo-module__QjZibG__timeCounter {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.InteractiveVideoDemo-module__QjZibG__fullscreenBtn {
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__fullscreenBtn:hover {
+  color: var(--text-primary);
+}
+
+.InteractiveVideoDemo-module__QjZibG__telemetryGrid {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  display: grid;
+}
+
+.InteractiveVideoDemo-module__QjZibG__telemetryCard {
+  border-radius: var(--radius-md);
+  background-color: #fbfbfd;
+  border: 1px solid #00000014;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cardHeader {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cpuIcon {
+  color: #2997ff;
+}
+
+.InteractiveVideoDemo-module__QjZibG__platformIcon {
+  color: #bf5af2;
+}
+
+.InteractiveVideoDemo-module__QjZibG__cardTitle {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__memoryGauges {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__gaugeItem {
+  flex-direction: column;
+  gap: 4px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__gaugeLabelRow {
+  color: var(--text-secondary);
+  justify-content: space-between;
+  font-size: 11px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__heapValue {
+  font-family: var(--font-mono);
+  color: #30d158;
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__opfsBufferValue {
+  font-family: var(--font-mono);
+  color: #ff9f0a;
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__gaugeBarTrack {
+  background-color: #ffffff14;
+  border-radius: 3px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.InteractiveVideoDemo-module__QjZibG__heapFill {
+  background-color: #30d158;
+  width: 14%;
+  height: 100%;
+}
+
+.InteractiveVideoDemo-module__QjZibG__opfsFill {
+  background: linear-gradient(90deg, #ff9500, #ff3b30);
+  width: 84%;
+  height: 100%;
+}
+
+.InteractiveVideoDemo-module__QjZibG__gaugeHelper {
+  color: var(--text-tertiary);
+  font-size: 10px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__platformSelectorRow {
+  gap: 8px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__platformBtn {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+  background-color: #101014;
+  border-radius: 6px;
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+.InteractiveVideoDemo-module__QjZibG__platformBtnActive {
+  color: var(--text-primary);
+  background-color: #ffffff1f;
+  border-color: #ffffff40;
+  font-weight: 500;
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaDetails {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background-color: #101014;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaRow {
+  justify-content: space-between;
+  font-size: 11px;
+  display: flex;
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaLabel {
+  color: var(--text-secondary);
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaValueGreen {
+  color: #30d158;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaValueCyan {
+  color: #64d2ff;
+  font-weight: 500;
+}
+
+.InteractiveVideoDemo-module__QjZibG__quotaValuePurple {
+  color: #bf5af2;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .InteractiveVideoDemo-module__QjZibG__telemetryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_components_InteractiveVideoDemo_InteractiveVideoDemo_module_css_1igg3k2._.single.css.map*/

@@ -274,10 +274,8 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
         )}
-      </header>
-
       {/* Apple Announcement Ribbon */}
-      <div id="apple-ribbon" className={styles.announcementRibbon}>
+      {/* <div id="apple-ribbon" className={styles.announcementRibbon}>
         <div className={styles.ribbonContainer}>
           <span className={styles.ribbonText}>
             100% Free & Open Architecture. 4 Flagship Breakthroughs & 20 Subdomains with zero fees or subscriptions.
@@ -290,7 +288,9 @@ export const Header: React.FC<HeaderProps> = ({
             <ChevronRight size={12} />
           </button>
         </div>
-      </div>
+      </div> */}
+      </header>
+
     </>
   );
 };
