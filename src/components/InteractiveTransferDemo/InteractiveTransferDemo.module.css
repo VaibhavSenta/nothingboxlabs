@@ -1,11 +1,11 @@
 .container {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .header {
@@ -13,8 +13,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background-color: rgba(20, 20, 24, 0.95);
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: #f5f5f7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .titleGroup {
@@ -67,9 +67,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #15151a;
+  background-color: #fbfbfd;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   gap: 12px;
 }
 
@@ -246,7 +246,7 @@
 
 .progressBarTrack {
   height: 6px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.08);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -366,6 +366,49 @@
 
 .greenCheck {
   color: #30d158;
+}
+
+.progressBarFillStudio {
+  width: 78%;
+  height: 100%;
+  background: linear-gradient(90deg, #0071e3 0%, #2997ff 60%, #5ac8fa 100%);
+  border-radius: 9999px;
+  position: relative;
+  box-shadow: 0 0 16px rgba(41, 151, 255, 0.5);
+}
+
+.studioSpecsRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.specChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #a1a1a6;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.directPillBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: #30d158;
+  background-color: rgba(48, 209, 88, 0.12);
+  border: 1px solid rgba(48, 209, 88, 0.25);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
 }
 
 @media (max-width: 650px) {

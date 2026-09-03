@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './ProductModal.module.css';
 import { CoreProduct } from '../../types/products';
+import { Logo } from '../Logo/Logo';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 import { X, Cpu, HardDrive, Network, MemoryStick, CheckCircle2, ExternalLink } from 'lucide-react';
@@ -28,7 +29,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
               <Badge variant="blue">{product.category}</Badge>
               <Badge variant="subtle">{product.status}</Badge>
             </div>
-            <h3 className={styles.title}>{product.title}</h3>
+            <div className={styles.titleRow}>
+              <Logo size={30} className={styles.modalLogo} />
+              <h3 className={styles.title}>{product.title}</h3>
+            </div>
             <span className={styles.subdomain}>{product.subdomain}</span>
           </div>
 

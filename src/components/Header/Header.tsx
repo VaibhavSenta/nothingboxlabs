@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
+import { Logo } from '../Logo/Logo';
 import {
   Search,
-  ShoppingBag,
   Menu,
   X,
   ChevronRight,
@@ -18,11 +18,15 @@ import {
 } from 'lucide-react';
 
 interface HeaderProps {
+  activeView?: string;
+  onNavigate?: (view: string) => void;
   onSelectProduct?: (productId: string) => void;
   onOpenRegistry?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
+  activeView = 'home',
+  onNavigate,
   onSelectProduct,
   onOpenRegistry,
 }) => {
@@ -45,18 +49,18 @@ export const Header: React.FC<HeaderProps> = ({
     setSearchOpen(false);
     setActiveDropdown(null);
     const elem = document.getElementById(elementId);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (elem) elem.scrollIntoView({ behavior: 'smooth' });
   };
 
   const quickLinks = [
+    { label: 'Overview (NothingBox Labs)', target: 'landing-hero' },
     { label: 'NothingChat (P2P Messaging)', target: 'hero-chat' },
     { label: 'NothingDrop (WebRTC 50GB)', target: 'hero-drop' },
     { label: 'NothingMusic (OPFS Audio)', target: 'hero-music' },
     { label: 'NothingCinema (4K Chunk Stream)', target: 'hero-cinema' },
     { label: '20 Subdomain Network Mesh', target: 'subdomain-carousel' },
-    { label: 'OPFS 5GB Virtual RAM Architecture', target: 'promo-grid' },
+    { label: 'Compare All Services', target: 'service-comparison' },
+    { label: '100% Free Ecosystem', target: 'free-ecosystem' },
   ];
 
   return (
@@ -66,24 +70,30 @@ export const Header: React.FC<HeaderProps> = ({
         className={`${styles.globalNav} ${isScrolled ? styles.navScrolled : ''}`}
       >
         <div className={styles.navContainer}>
-          {/* Apple Logo */}
+          {/* Brand Logo */}
           <button
             id="apple-logo-btn"
             className={styles.appleLogoBtn}
-            onClick={() => scrollTo('hero-chat')}
+            onClick={() => scrollTo('landing-hero')}
             aria-label="NothingBox Labs Home"
           >
-            <span className={styles.appleGlyph}></span>
-            <span className={styles.appleBrandText}>Labs</span>
+            <Logo size={28} className={styles.brandLogoSvg} />
+            <span className={styles.appleBrandText}>NothingBox Labs</span>
           </button>
 
           {/* Desktop Navigation Links */}
           <nav className={styles.navLinksList}>
             <button
+              id="nav-link-overview"
+              className={styles.navItem}
+              onClick={() => scrollTo('landing-hero')}
+            >
+              Overview
+            </button>
+            <button
               id="nav-link-chat"
               className={styles.navItem}
               onClick={() => scrollTo('hero-chat')}
-              onMouseEnter={() => setActiveDropdown('chat')}
             >
               NothingChat
             </button>
@@ -91,7 +101,6 @@ export const Header: React.FC<HeaderProps> = ({
               id="nav-link-drop"
               className={styles.navItem}
               onClick={() => scrollTo('hero-drop')}
-              onMouseEnter={() => setActiveDropdown('drop')}
             >
               NothingDrop
             </button>
@@ -99,7 +108,6 @@ export const Header: React.FC<HeaderProps> = ({
               id="nav-link-music"
               className={styles.navItem}
               onClick={() => scrollTo('hero-music')}
-              onMouseEnter={() => setActiveDropdown('music')}
             >
               NothingMusic
             </button>
@@ -107,7 +115,6 @@ export const Header: React.FC<HeaderProps> = ({
               id="nav-link-cinema"
               className={styles.navItem}
               onClick={() => scrollTo('hero-cinema')}
-              onMouseEnter={() => setActiveDropdown('cinema')}
             >
               NothingCinema
             </button>
@@ -115,29 +122,26 @@ export const Header: React.FC<HeaderProps> = ({
               id="nav-link-subdomains"
               className={styles.navItem}
               onClick={() => scrollTo('subdomain-carousel')}
-              onMouseEnter={() => setActiveDropdown('subdomains')}
             >
-              20 Subdomains
+              20 Services
             </button>
             <button
-              id="nav-link-architecture"
+              id="nav-link-compare"
               className={styles.navItem}
-              onClick={() => scrollTo('promo-grid')}
-              onMouseEnter={() => setActiveDropdown('arch')}
+              onClick={() => scrollTo('service-comparison')}
             >
-              Architecture
+              Compare
             </button>
             <button
-              id="nav-link-specs"
-              className={styles.navItem}
-              onClick={() => scrollTo('promo-grid')}
-              onMouseEnter={() => setActiveDropdown(null)}
+              id="nav-link-free"
+              className={styles.navItemHighlight}
+              onClick={() => scrollTo('free-ecosystem')}
             >
-              Tech Specs
+              100% Free
             </button>
           </nav>
 
-          {/* Nav Utilities: Search & Bag */}
+          {/* Nav Utilities: Search & Free Pill */}
           <div className={styles.navUtilities}>
             <button
               id="nav-search-toggle"
@@ -149,12 +153,12 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
-              id="nav-bag-btn"
-              className={styles.utilityBtn}
-              onClick={() => scrollTo('subdomain-carousel')}
-              aria-label="Subdomain Suite"
+              id="nav-free-pill"
+              className={styles.freePillBtn}
+              onClick={() => scrollTo('free-ecosystem')}
+              aria-label="100% Free & Open"
             >
-              <ShoppingBag size={15} />
+              <span>Free</span>
             </button>
 
             {/* Mobile Hamburger Toggle */}
@@ -221,27 +225,33 @@ export const Header: React.FC<HeaderProps> = ({
             <div className={styles.mobileLinksContainer}>
               <button
                 className={styles.mobileMenuLink}
+                onClick={() => scrollTo('landing-hero')}
+              >
+                Overview (NothingBox Labs)
+              </button>
+              <button
+                className={styles.mobileMenuLink}
                 onClick={() => scrollTo('hero-chat')}
               >
-                NothingChat
+                NothingChat (P2P Messaging)
               </button>
               <button
                 className={styles.mobileMenuLink}
                 onClick={() => scrollTo('hero-drop')}
               >
-                NothingDrop
+                NothingDrop (50GB Transfer)
               </button>
               <button
                 className={styles.mobileMenuLink}
                 onClick={() => scrollTo('hero-music')}
               >
-                NothingMusic
+                NothingMusic (OPFS Audio)
               </button>
               <button
                 className={styles.mobileMenuLink}
                 onClick={() => scrollTo('hero-cinema')}
               >
-                NothingCinema 4K
+                NothingCinema (4K Chunk Stream)
               </button>
               <button
                 className={styles.mobileMenuLink}
@@ -251,21 +261,16 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
               <button
                 className={styles.mobileMenuLink}
-                onClick={() => scrollTo('promo-grid')}
+                onClick={() => scrollTo('service-comparison')}
               >
-                OPFS & WebRTC Architecture
+                Compare All Services
               </button>
-              <div className={styles.mobileSubdomainCTA}>
-                <a
-                  href="https://chat.nothingboxlabs.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.mobileLaunchBtn}
-                >
-                  <span>Launch NothingChat</span>
-                  <ExternalLink size={14} />
-                </a>
-              </div>
+              <button
+                className={styles.mobileMenuLink}
+                onClick={() => scrollTo('free-ecosystem')}
+              >
+                100% Free Ecosystem
+              </button>
             </div>
           </div>
         )}
@@ -275,7 +280,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div id="apple-ribbon" className={styles.announcementRibbon}>
         <div className={styles.ribbonContainer}>
           <span className={styles.ribbonText}>
-            Engineered for raw browser power. 4 Flagship Breakthroughs & 20 Subdomains.
+            100% Free & Open Architecture. 4 Flagship Breakthroughs & 20 Subdomains with zero fees or subscriptions.
           </span>
           <button
             className={styles.ribbonLink}

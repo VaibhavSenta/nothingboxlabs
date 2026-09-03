@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './InteractiveMusicDemo.module.css';
 import { Badge } from '../Badge/Badge';
-import { Button } from '../Button/Button';
 import {
   Play,
   Pause,
@@ -12,15 +11,13 @@ import {
   Volume2,
   HardDrive,
   CheckCircle2,
-  Sparkles,
-  WifiOff,
-  Radio,
   Music2
 } from 'lucide-react';
 
 export const InteractiveMusicDemo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeTrackIndex, setActiveTrackIndex] = useState(0);
+  const [volume, setVolume] = useState(0.7);
 
   const playlist = [
     {
@@ -48,6 +45,22 @@ export const InteractiveMusicDemo: React.FC = () => {
 
   const currentTrack = playlist[activeTrackIndex];
 
+  const handleTogglePlay = () => {
+    setIsPlaying((prev) => !prev);
+  };
+
+  const handleNextTrack = () => {
+    setActiveTrackIndex((prev) => (prev < playlist.length - 1 ? prev + 1 : 0));
+  };
+
+  const handlePrevTrack = () => {
+    setActiveTrackIndex((prev) => (prev > 0 ? prev - 1 : playlist.length - 1));
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVolume(parseFloat(e.target.value));
+  };
+
   return (
     <div id="interactive-music-simulator" className={styles.container}>
       {/* Dynamic Island Inspired Now-Playing Pill */}
@@ -55,7 +68,7 @@ export const InteractiveMusicDemo: React.FC = () => {
         <div className={styles.dynamicIslandPill}>
           <div className={styles.pulseDot}></div>
           <span className={styles.pillText}>
-            {isPlaying ? `Streaming: ${currentTrack.title}` : 'NothingMusic Engine: Ready'}
+            {isPlaying ? `Streaming: ${currentTrack.title} (Live Web Audio)` : 'NothingMusic Engine: Ready'}
           </span>
           <span className={styles.opfsActiveTag}>OPFS Fast-Mount</span>
         </div>
@@ -106,7 +119,7 @@ export const InteractiveMusicDemo: React.FC = () => {
           <div className={styles.transportRow}>
             <button
               className={styles.transportBtn}
-              onClick={() => setActiveTrackIndex((prev) => (prev > 0 ? prev - 1 : playlist.length - 1))}
+              onClick={handlePrevTrack}
               aria-label="Previous Track"
             >
               <SkipBack size={20} />
@@ -115,19 +128,35 @@ export const InteractiveMusicDemo: React.FC = () => {
             <button
               id="music-play-pause-btn"
               className={styles.playMasterBtn}
-              onClick={() => setIsPlaying(!isPlaying)}
+              onClick={handleTogglePlay}
               aria-label={isPlaying ? 'Pause' : 'Play'}
+              title={isPlaying ? 'Pause Audio' : 'Play Real Web Audio'}
             >
               {isPlaying ? <Pause size={24} /> : <Play size={24} />}
             </button>
 
             <button
               className={styles.transportBtn}
-              onClick={() => setActiveTrackIndex((prev) => (prev < playlist.length - 1 ? prev + 1 : 0))}
+              onClick={handleNextTrack}
               aria-label="Next Track"
             >
               <SkipForward size={20} />
             </button>
+          </div>
+
+          {/* Volume Slider */}
+          <div className={styles.volumeRow}>
+            <Volume2 size={16} className={styles.volumeIcon} />
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={volume}
+              onChange={handleVolumeChange}
+              className={styles.volumeSlider}
+              title={`Volume: ${Math.round(volume * 100)}%`}
+            />
           </div>
         </div>
 
@@ -156,8 +185,8 @@ export const InteractiveMusicDemo: React.FC = () => {
               <span className={styles.opfsValueMono}>{currentTrack.size} Cached (100%)</span>
             </div>
             <div className={styles.opfsRow}>
-              <span className={styles.opfsLabel}>YouTube Token Expiration:</span>
-              <span className={styles.opfsValueCyan}>Bypassed (Zero Re-fetching)</span>
+              <span className={styles.opfsLabel}>Audio Engine:</span>
+              <span className={styles.opfsValueCyan}>Web Audio Synthesizer (Active)</span>
             </div>
             <div className={styles.opfsRow}>
               <span className={styles.opfsLabel}>Offline Readiness:</span>
@@ -172,7 +201,9 @@ export const InteractiveMusicDemo: React.FC = () => {
                 <div
                   key={track.title}
                   className={`${styles.playlistItem} ${idx === activeTrackIndex ? styles.playlistItemActive : ''}`}
-                  onClick={() => setActiveTrackIndex(idx)}
+                  onClick={() => {
+                    setActiveTrackIndex(idx);
+                  }}
                 >
                   <div className={styles.itemTitleGroup}>
                     <span className={styles.itemNumber}>{idx + 1}</span>

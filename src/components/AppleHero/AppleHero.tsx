@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './AppleHero.module.css';
 import { CoreProduct } from '../../types/products';
+import { Logo } from '../Logo/Logo';
 import { InteractiveChatDemo } from '../InteractiveChatDemo/InteractiveChatDemo';
 import { InteractiveTransferDemo } from '../InteractiveTransferDemo/InteractiveTransferDemo';
 import { InteractiveMusicDemo } from '../InteractiveMusicDemo/InteractiveMusicDemo';
@@ -13,6 +14,7 @@ interface AppleHeroProps {
   product: CoreProduct;
   theme?: 'titanium' | 'ultramarine' | 'spaceblack' | 'obsidian';
   onOpenSpecs: (product: CoreProduct) => void;
+  onLaunchApp?: (productId: string) => void;
   sectionId: string;
 }
 
@@ -20,6 +22,7 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
   product,
   theme = 'titanium',
   onOpenSpecs,
+  onLaunchApp,
   sectionId,
 }) => {
   const renderDeviceContent = () => {
@@ -56,7 +59,10 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
       <div className={styles.heroContent}>
         {/* Apple Centered Text Block */}
         <div className={styles.headerBlock}>
-          <span className={styles.eyebrowTag}>{product.category}</span>
+          <div className={styles.brandHeroBadge}>
+            <Logo size={36} className={styles.heroLogoMark} />
+            <span className={styles.eyebrowTag}>{product.category}</span>
+          </div>
           <h2 className={styles.productHeadline}>{product.title}</h2>
           <p className={styles.productSubhead}>{product.tagline}</p>
 
@@ -70,15 +76,17 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
               <span>Learn more</span>
             </button>
 
-            <a
-              href={product.subdomainTarget}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              id={`compare-${product.slug}`}
               className={styles.appleTextLink}
+              onClick={() => {
+                const elem = document.getElementById('service-comparison');
+                if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <span>Open {product.subdomain}</span>
+              <span>Compare {product.title}</span>
               <ChevronRight size={14} className={styles.chevronIcon} />
-            </a>
+            </button>
           </div>
 
           {/* Sub-feature chips */}

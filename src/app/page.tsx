@@ -5,9 +5,12 @@ import styles from './page.module.css';
 import { CORE_PRODUCTS } from '../data/productsData';
 import { CoreProduct } from '../types/products';
 import { Header } from '../components/Header/Header';
+import { LandingHero } from '../components/LandingHero/LandingHero';
 import { AppleHero } from '../components/AppleHero/AppleHero';
 import { ApplePromoGrid } from '../components/ApplePromoGrid/ApplePromoGrid';
+import { AppleComparison } from '../components/AppleComparison/AppleComparison';
 import { AppleSubdomainCarousel } from '../components/AppleSubdomainCarousel/AppleSubdomainCarousel';
+import { AppleFreeEcosystem } from '../components/AppleFreeEcosystem/AppleFreeEcosystem';
 import { ProductModal } from '../components/ProductModal/ProductModal';
 import { Footer } from '../components/Footer/Footer';
 
@@ -19,10 +22,12 @@ export default function Home() {
     setSelectedProductForModal(product);
   };
 
-  const handleScrollTo = (elementId: string) => {
-    const elem = document.getElementById(elementId);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+  const handleOpenSpecsBySlug = (slug: string) => {
+    const found = CORE_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
+    if (found) {
+      setSelectedProductForModal(found);
+    } else {
+      setSelectedProductForModal(CORE_PRODUCTS[0]);
     }
   };
 
@@ -33,10 +38,23 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* Apple 44px Navigation Bar & Ribbon */}
-      <Header
-        onSelectProduct={(productId) => handleScrollTo(`hero-${productId}`)}
-        onOpenRegistry={() => handleScrollTo('subdomain-carousel')}
+      {/* Apple 44px Blur Navigation Bar & Announcement Ribbon */}
+      <Header />
+
+      {/* Full Device Height Landing / Ecosystem Introduction: NothingBox Labs */}
+      <LandingHero
+        onExploreChat={() => {
+          const elem = document.getElementById('hero-chat');
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onExploreSubdomains={() => {
+          const elem = document.getElementById('subdomain-carousel');
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onExploreFree={() => {
+          const elem = document.getElementById('free-ecosystem');
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }}
       />
 
       {/* Flagship Apple Hero 1: NothingChat (Dark Titanium) */}
@@ -71,14 +89,23 @@ export default function Home() {
         onOpenSpecs={handleOpenSpecs}
       />
 
-      {/* Apple 2-Column Promo Grid (6 Signature Cards) */}
+      {/* Apple 2-Column Promo Grid (Apple Intelligence & Architectural Breakthroughs) */}
       <ApplePromoGrid
-        onOpenSubdomains={() => handleScrollTo('subdomain-carousel')}
+        onOpenSubdomains={() => {
+          const elem = document.getElementById('subdomain-carousel');
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }}
         onOpenSpecs={() => handleOpenSpecs(chatProduct)}
       />
 
-      {/* Apple TV+ Style Interactive Filmstrip for 20 Subdomains */}
+      {/* Apple 4-Column "Which Service is Right for You?" Comparison Matrix */}
+      <AppleComparison onOpenSpecs={handleOpenSpecsBySlug} />
+
+      {/* Apple TV+ Style Interactive Filmstrip for 20 Subdomains / Services */}
       <AppleSubdomainCarousel />
+
+      {/* 100% Free & Open Architecture - Zero Fees & Zero Subscriptions */}
+      <AppleFreeEcosystem onOpenSpecsBySlug={handleOpenSpecsBySlug} />
 
       {/* Apple 5-Column Directory & Legal Footnotes Footer */}
       <Footer />

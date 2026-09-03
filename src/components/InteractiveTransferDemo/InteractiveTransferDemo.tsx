@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './InteractiveTransferDemo.module.css';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
@@ -13,13 +13,26 @@ import {
   Check,
   ArrowRightLeft,
   FileArchive,
-  RefreshCw
+  RefreshCw,
+  Upload,
+  Download,
+  FileText
 } from 'lucide-react';
 
 export const InteractiveTransferDemo: React.FC = () => {
   const [isTransferring, setIsTransferring] = useState(false);
   const [progress, setProgress] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [activeFile, setActiveFile] = useState<{
+    name: string;
+    size: string;
+    blobUrl?: string;
+  }>({
+    name: 'ProRes_Master_Export_4K.zip',
+    size: '48.6 GB',
+  });
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -30,9 +43,9 @@ export const InteractiveTransferDemo: React.FC = () => {
             setIsTransferring(false);
             return 100;
           }
-          return prev + 5;
+          return prev + 10;
         });
-      }, 120);
+      }, 100);
     }
     return () => clearInterval(timer);
   }, [isTransferring]);
@@ -44,7 +57,45 @@ export const InteractiveTransferDemo: React.FC = () => {
 
   const handleCopyLink = () => {
     setCopied(true);
+    navigator.clipboard?.writeText('https://transfer.nothingboxlabs.com/#session=rtc-9042b-direct');
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCustomFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const formattedSize =
+        file.size > 1024 * 1024
+          ? `${(file.size / (1024 * 1024)).toFixed(2)} MB`
+          : `${(file.size / 1024).toFixed(1)} KB`;
+      const url = URL.createObjectURL(file);
+      setActiveFile({
+        name: file.name,
+        size: formattedSize,
+        blobUrl: url,
+      });
+      setProgress(0);
+      setIsTransferring(true);
+    }
+  };
+
+  const handleDownload = () => {
+    if (activeFile.blobUrl) {
+      const a = document.createElement('a');
+      a.href = activeFile.blobUrl;
+      a.download = `P2P_Received_${activeFile.name}`;
+      a.click();
+    } else {
+      const blob = new Blob(['NothingBox Labs WebRTC P2P Transfer Payload Verified'], {
+        type: 'text/plain',
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `P2P_Received_${activeFile.name}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
   };
 
   return (
@@ -104,9 +155,9 @@ export const InteractiveTransferDemo: React.FC = () => {
               <FileArchive size={24} className={styles.fileArchiveIcon} />
             </div>
             <div className={styles.fileDetails}>
-              <span className={styles.fileName}>ProRes_Master_Export_4K.zip</span>
+              <span className={styles.fileName}>{activeFile.name}</span>
               <span className={styles.fileMetaText}>
-                48.6 GB • 64KB Sliced Binary Chunks • Zero Server Cap
+                {activeFile.size} • 64KB Sliced Binary Chunks • Zero Server Cap
               </span>
             </div>
             <div className={styles.transferSpeedBadge}>
@@ -117,37 +168,28 @@ export const InteractiveTransferDemo: React.FC = () => {
 
           {/* Progress Bar */}
           <div className={styles.progressBarTrack}>
-            <div
-              className={`${styles.progressBarFill} ${styles[`progress_${Math.round(progress / 10) * 10}`] || styles.progress_0}`}
-            ></div>
+            <div className={styles.progressBarFillStudio}></div>
           </div>
 
           <div className={styles.progressMetrics}>
             <span className={styles.metricItem}>
-              Transferred: {((progress / 100) * 48.6).toFixed(1)} GB / 48.6 GB
+              Status: Active 64KB Chunk Stream (Direct Socket Buffer)
             </span>
-            <span className={styles.metricItem}>{progress}% Sliced</span>
-            <span className={styles.metricItem}>
-              {isTransferring ? 'Syncing...' : progress === 100 ? 'Transfer Complete' : 'Ready'}
-            </span>
+            <span className={styles.metricItem}>78% Transferred • 37.9 GB / 48.6 GB</span>
           </div>
 
-          {/* Action Trigger */}
-          <div className={styles.cardActions}>
-            <Button
-              id="transfer-start-simulation-btn"
-              variant={isTransferring ? 'glass' : 'primary'}
-              size="sm"
-              onClick={startDemoTransfer}
-              disabled={isTransferring}
-              icon={<RefreshCw size={14} className={isTransferring ? styles.spinIcon : ''} />}
-            >
-              {isTransferring
-                ? 'Streaming Chunks Over WebRTC...'
-                : progress === 100
-                ? 'Retest 50GB Transfer'
-                : 'Simulate High-Speed Transfer'}
-            </Button>
+          {/* Apple Studio Telemetry Specs Bar */}
+          <div className={styles.studioSpecsRow}>
+            <div className={styles.specChip}>
+              <ShieldCheck size={13} className={styles.greenCheck} />
+              <span>SHA-256 On-the-Fly Verification</span>
+            </div>
+            <div className={styles.specChip}>
+              <span>0% Cloud Intermediary</span>
+            </div>
+            <div className={styles.specChip}>
+              <span>Latency: 2.4ms (LAN)</span>
+            </div>
           </div>
         </div>
 
@@ -156,22 +198,16 @@ export const InteractiveTransferDemo: React.FC = () => {
           <div className={styles.pairingInfo}>
             <ShieldCheck size={16} className={styles.shieldIcon} />
             <span className={styles.pairingLabel}>
-              One-Time Ephemeral Room Link (Bypasses Cloud Disk)
+              Ephemeral WebRTC DataChannel Session (End-to-End Encrypted)
             </span>
           </div>
           <div className={styles.linkBox}>
             <span className={styles.roomUrl}>
               https://transfer.nothingboxlabs.com/#session=rtc-9042b-direct
             </span>
-            <button
-              id="copy-transfer-link-btn"
-              className={styles.copyButton}
-              onClick={handleCopyLink}
-              title="Copy session URL"
-            >
-              {copied ? <Check size={14} className={styles.greenCheck} /> : <Copy size={14} />}
-              <span>{copied ? 'Copied' : 'Copy'}</span>
-            </button>
+            <div className={styles.directPillBadge}>
+              <span>Direct Link Active</span>
+            </div>
           </div>
         </div>
       </div>

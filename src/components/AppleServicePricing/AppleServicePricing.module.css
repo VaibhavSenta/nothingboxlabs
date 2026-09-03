@@ -1,0 +1,267 @@
+.pricingSection {
+  width: 100%;
+  padding: 100px 20px 120px;
+  background: #ffffff;
+  border-bottom: 12px solid #fbfbfd;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerBlock {
+  max-width: 780px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.headerLogoWrap {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.pricingLogo {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0071e3;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.headline {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #1d1d1f;
+  margin-bottom: 16px;
+}
+
+.subhead {
+  font-size: 19px;
+  line-height: 1.45;
+  color: #6e6e73;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.notificationToast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1d1d1f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: appleSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes appleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bagIcon {
+  color: #34c759;
+}
+
+/* 3-Column Pricing Grid */
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.tierCard {
+  background: #fbfbfd;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.tierCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.tierCardPopular {
+  background: #ffffff;
+  border: 2px solid #0071e3;
+  box-shadow: 0 12px 40px rgba(0, 113, 227, 0.12);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0071e3;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+.cardTop {
+  margin-bottom: 32px;
+}
+
+.tierName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 6px;
+}
+
+.tierTagline {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6e6e73;
+  margin-bottom: 24px;
+  min-height: 38px;
+}
+
+.priceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.priceNumber {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #1d1d1f;
+}
+
+.pricePeriod {
+  font-size: 13px;
+  color: #6e6e73;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkIcon {
+  color: #34c759;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featureText {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1d1d1f;
+}
+
+.cardBottom {
+  margin-top: 36px;
+}
+
+.primaryBtn {
+  width: 100%;
+  background-color: #0071e3;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
+}
+
+.primaryBtn:hover {
+  background-color: #0077ed;
+  transform: scale(1.01);
+}
+
+.secondaryBtn {
+  width: 100%;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.secondaryBtn:hover {
+  background-color: #e5e5ea;
+  transform: scale(1.01);
+}
+
+@media (max-width: 1024px) {
+  .tiersGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .headline {
+    font-size: 38px;
+  }
+}

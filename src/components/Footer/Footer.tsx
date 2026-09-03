@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { Logo } from '../Logo/Logo';
 import { ChevronRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -26,7 +27,7 @@ export const Footer: React.FC = () => {
 
         {/* Apple Breadcrumb Bar */}
         <nav className={styles.breadcrumbBar} aria-label="Breadcrumbs">
-          <span className={styles.appleLogoGlyph}></span>
+          <Logo size={22} className={styles.footerLogoGlyph} />
           <ChevronRight size={12} className={styles.breadcrumbChevron} />
           <span className={styles.breadcrumbItem}>NothingBox Labs</span>
           <ChevronRight size={12} className={styles.breadcrumbChevron} />
@@ -39,7 +40,7 @@ export const Footer: React.FC = () => {
         <div className={styles.directoryGrid}>
           {/* Column 1 */}
           <div className={styles.directoryCol}>
-            <span className={styles.colHeader}>Shop and Learn</span>
+            <span className={styles.colHeader}>Explore and Learn</span>
             <ul className={styles.colLinks}>
               <li><a href="#hero-chat" className={styles.colLink}>NothingChat</a></li>
               <li><a href="#hero-drop" className={styles.colLink}>NothingDrop P2P</a></li>

@@ -2,34 +2,35 @@
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0c;
-  --bg-tertiary: #141417;
-  --bg-elevated: #1c1c21;
-  --bg-glass: rgba(18, 18, 22, 0.72);
-  --bg-glass-hover: rgba(30, 30, 36, 0.85);
+  /* Apple Signature Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fbfbfd;
+  --bg-tertiary: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.82);
+  --bg-glass-hover: rgba(245, 245, 247, 0.95);
 
-  --border-subtle: #26262b;
-  --border-active: #3a3a42;
-  --border-highlight: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-active: rgba(0, 0, 0, 0.16);
+  --border-highlight: rgba(0, 0, 0, 0.04);
 
-  --text-primary: #f5f5f7;
-  --text-secondary: #86868b;
-  --text-tertiary: #6e6e73;
-  --text-inverted: #000000;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --text-inverted: #ffffff;
 
   --accent-apple-blue: #0071e3;
   --accent-apple-blue-hover: #0077ed;
-  --accent-cyan: #29b6f6;
-  --accent-purple: #bf5af2;
-  --accent-orange: #ff9f0a;
-  --accent-green: #30d158;
-  --accent-red: #ff453a;
+  --accent-cyan: #0288d1;
+  --accent-purple: #af52de;
+  --accent-orange: #f56300;
+  --accent-green: #34c759;
+  --accent-red: #ff3b30;
 
   --radius-sm: 8px;
   --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 30px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
   --transition-fast: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -49,7 +50,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-family: var(--font-system);
   -webkit-font-smoothing: antialiased;
@@ -79,14 +80,14 @@ input, select, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #f5f5f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2b2b30;
+  background: #d2d2d7;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3e3e46;
+  background: #b0b0b6;
 }

@@ -1,8 +1,8 @@
 .footer {
-  background-color: #000000;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #f5f5f7;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding: 40px 24px 30px;
-  color: #86868b;
+  color: #6e6e73;
   font-size: 12px;
   line-height: 1.33;
 }
@@ -15,7 +15,7 @@
 /* Footnotes */
 .footnotesSection {
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
 }
 
@@ -29,7 +29,7 @@
 .footnoteItem {
   font-size: 11px;
   line-height: 1.5;
-  color: #6e6e73;
+  color: #86868b;
 }
 
 /* Breadcrumb */
@@ -38,47 +38,48 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 30px;
   font-size: 12px;
 }
 
-.appleLogoGlyph {
-  font-size: 15px;
-  color: #f5f5f7;
+.footerLogoGlyph {
+  flex-shrink: 0;
 }
 
 .breadcrumbChevron {
-  color: #424245;
-}
-
-.breadcrumbItem {
   color: #86868b;
 }
 
-.breadcrumbCurrent {
-  color: #f5f5f7;
+.breadcrumbItem {
+  color: #6e6e73;
 }
 
-/* 5-Column Directory Grid */
+.breadcrumbCurrent {
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+/* 5-Column Directory */
 .directoryGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
-  margin-bottom: 36px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
 }
 
 .directoryCol {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .colHeader {
   font-size: 12px;
   font-weight: 600;
-  color: #f5f5f7;
-  letter-spacing: -0.01em;
+  color: #1d1d1f;
 }
 
 .colLinks {
@@ -89,30 +90,27 @@
 }
 
 .colLink {
-  color: #86868b;
+  color: #6e6e73;
   font-size: 12px;
   transition: color 0.15s ease;
 }
 
 .colLink:hover {
-  color: #f5f5f7;
-  text-decoration: underline;
+  color: #0071e3;
 }
 
 /* Bottom Bar */
 .bottomBar {
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 16px;
+  font-size: 11px;
 }
 
 .copyrightText {
-  color: #6e6e73;
-  font-size: 11px;
+  color: #86868b;
 }
 
 .legalLinks {
@@ -123,46 +121,36 @@
 }
 
 .legalLink {
-  color: #86868b;
-  font-size: 11px;
+  color: #424245;
   transition: color 0.15s ease;
 }
 
 .legalLink:hover {
-  color: #f5f5f7;
-  text-decoration: underline;
+  color: #0071e3;
 }
 
 .legalDivider {
-  color: #424245;
-  font-size: 10px;
+  color: #d2d2d7;
 }
 
 .localeSelector {
-  color: #86868b;
-  font-size: 11px;
-  cursor: pointer;
+  color: #424245;
+  font-weight: 500;
 }
 
-.localeSelector:hover {
-  color: #f5f5f7;
-}
-
-@media (max-width: 840px) {
+@media (max-width: 820px) {
   .directoryGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-}
-
-@media (max-width: 540px) {
-  .directoryGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .bottomBar {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .directoryGrid {
+    grid-template-columns: 1fr;
   }
 }
