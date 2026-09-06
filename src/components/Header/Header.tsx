@@ -72,7 +72,6 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'NothingDrop', target: 'hero-drop' },
     { label: 'NothingMusic', target: 'hero-music' },
     { label: 'NothingCinema', target: 'hero-cinema' },
-    { label: 'Compare', target: 'service-comparison' },
     { label: 'FAQ', target: 'faq-section' },
   ];
 
@@ -112,12 +111,6 @@ export const Header: React.FC<HeaderProps> = ({
       desc: '4K Hardware Media Stream',
       target: 'hero-cinema',
       icon: <Film size={18} className={styles.mobileIconOrange} />,
-    },
-    {
-      label: 'Compare Products',
-      desc: 'Side-by-side technical specs',
-      target: 'service-comparison',
-      icon: <ChevronRight size={18} className={styles.mobileIconMuted} />,
     },
     {
       label: 'FAQ',
@@ -173,20 +166,30 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Hamburger Toggle */}
           <button
             id="mobile-nav-toggle"
+            type="button"
             className={styles.mobileHamburger}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setMobileMenuOpen((prev) => !prev);
+            }}
             aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Backdrop & Drawer */}
       {mobileMenuOpen && (
-        <div className={styles.mobileBackdrop} onClick={() => setMobileMenuOpen(false)}>
+        <div
+          id="mobile-nav-backdrop"
+          className={styles.mobileBackdrop}
+          onClick={() => setMobileMenuOpen(false)}
+        >
           <div
+            id="mobile-nav-drawer"
             className={styles.mobileDropdownMenu}
             onClick={(e) => e.stopPropagation()}
           >
@@ -198,6 +201,8 @@ export const Header: React.FC<HeaderProps> = ({
               {mobileLinks.map((link) => (
                 <button
                   key={link.target}
+                  id={`mobile-link-${link.target}`}
+                  type="button"
                   className={styles.mobileMenuLinkCard}
                   onClick={() => scrollTo(link.target)}
                 >
@@ -213,6 +218,8 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div className={styles.mobileMenuFooter}>
               <button
+                id="mobile-launch-suite-btn"
+                type="button"
                 className={styles.mobileLaunchBtn}
                 onClick={() => scrollTo('hero-chat')}
               >

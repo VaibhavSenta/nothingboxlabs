@@ -134,11 +134,11 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             <ArrowRight size={16} />
           </button>
           <button
-            id="hero-cta-compare"
+            id="hero-cta-security"
             className={styles.secondaryBtn}
-            onClick={() => scrollTo('service-comparison')}
+            onClick={() => scrollTo('trust-compatibility')}
           >
-            <span>Compare Services</span>
+            <span>Security Architecture</span>
             <ChevronRight size={16} />
           </button>
         </div>

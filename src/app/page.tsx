@@ -8,7 +8,6 @@ import { Header } from '../components/Header/Header';
 import { LandingHero } from '../components/LandingHero/LandingHero';
 import { AppleHero } from '../components/AppleHero/AppleHero';
 import { ApplePromoGrid } from '../components/ApplePromoGrid/ApplePromoGrid';
-import { AppleComparison } from '../components/AppleComparison/AppleComparison';
 import { TrustAndCompatibility } from '../components/TrustAndCompatibility/TrustAndCompatibility';
 import { AppleFAQ } from '../components/AppleFAQ/AppleFAQ';
 import { AppleFreeEcosystem } from '../components/AppleFreeEcosystem/AppleFreeEcosystem';
@@ -49,11 +48,11 @@ export default function Home() {
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onExploreSubdomains={() => {
-          const elem = document.getElementById('service-comparison');
+          const elem = document.getElementById('promo-grid');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onExploreFree={() => {
-          const elem = document.getElementById('service-comparison');
+          const elem = document.getElementById('faq-section');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
       />
@@ -96,14 +95,11 @@ export default function Home() {
       {/* Apple 2-Column Promo Grid (Architectural Breakthroughs) */}
       <ApplePromoGrid
         onOpenSubdomains={() => {
-          const elem = document.getElementById('service-comparison');
+          const elem = document.getElementById('promo-grid');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onOpenSpecs={() => handleOpenSpecs(chatProduct)}
       />
-
-      {/* Apple 4-Column "Which Service is Right for You?" Comparison Matrix */}
-      <AppleComparison onOpenSpecs={handleOpenSpecsBySlug} />
 
       {/* Apple-Style Frequently Asked Questions Accordion */}
       <AppleFAQ />

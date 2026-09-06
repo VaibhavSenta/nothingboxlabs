@@ -46,7 +46,6 @@ export const Footer: React.FC = () => {
               <li><a href="#hero-drop" className={styles.colLink}>NothingDrop P2P</a></li>
               <li><a href="#hero-music" className={styles.colLink}>NothingMusic</a></li>
               <li><a href="#hero-cinema" className={styles.colLink}>NothingCinema 4K</a></li>
-              <li><a href="#service-comparison" className={styles.colLink}>Comparison Matrix</a></li>
               <li><a href="#trust-compatibility" className={styles.colLink}>Security & Audit</a></li>
               <li><a href="#faq-section" className={styles.colLink}>Frequently Asked Questions</a></li>
             </ul>
@@ -56,10 +55,10 @@ export const Footer: React.FC = () => {
           <div className={styles.directoryCol}>
             <span className={styles.colHeader}>Account & Identity</span>
             <ul className={styles.colLinks}>
-              <li><a href="#service-comparison" className={styles.colLink}>NothingAuth Passkey</a></li>
-              <li><a href="#service-comparison" className={styles.colLink}>NothingVault Encrypted</a></li>
-              <li><a href="#service-comparison" className={styles.colLink}>Biometric WebAuthn</a></li>
-              <li><a href="#service-comparison" className={styles.colLink}>Session Management</a></li>
+              <li><a href="#trust-compatibility" className={styles.colLink}>NothingAuth Passkey</a></li>
+              <li><a href="#trust-compatibility" className={styles.colLink}>NothingVault Encrypted</a></li>
+              <li><a href="#trust-compatibility" className={styles.colLink}>Biometric WebAuthn</a></li>
+              <li><a href="#trust-compatibility" className={styles.colLink}>Session Management</a></li>
             </ul>
           </div>
 

@@ -78,18 +78,6 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
             >
               <span>Explore Architecture & Specs</span>
             </button>
-
-            <button
-              id={`compare-${product.slug}`}
-              className={styles.appleTextLink}
-              onClick={() => {
-                const elem = document.getElementById('service-comparison');
-                if (elem) elem.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <span>Compare {product.title}</span>
-              <ChevronRight size={14} className={styles.chevronIcon} />
-            </button>
           </div>
 
           {/* Sub-feature chips */}
