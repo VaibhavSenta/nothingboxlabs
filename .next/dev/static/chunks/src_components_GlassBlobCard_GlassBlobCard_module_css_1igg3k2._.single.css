@@ -6,6 +6,8 @@
   transform: rotate(var(--card-rotation, -2deg));
   cursor: pointer;
   text-align: inherit;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   background: #fbfbfd;
   border: 1px solid #00000014;
   border-radius: 22px;
@@ -147,6 +149,9 @@
 .GlassBlobCard-module__KKnX5q__actionPill {
   color: #fff;
   white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
   background: #111827;
   border-radius: 9999px;
   justify-content: center;
