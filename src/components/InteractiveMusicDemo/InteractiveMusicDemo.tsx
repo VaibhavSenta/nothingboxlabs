@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './InteractiveMusicDemo.module.css';
 import { Badge } from '../Badge/Badge';
 import {
@@ -66,6 +67,13 @@ export const InteractiveMusicDemo: React.FC = () => {
       {/* Dynamic Island Inspired Now-Playing Pill */}
       <div className={styles.headerBar}>
         <div className={styles.dynamicIslandPill}>
+          <Image
+            src="/nothingmusic/icon-mark.svg"
+            alt="NothingMusic"
+            width={16}
+            height={20}
+            style={{ borderRadius: 2, objectFit: 'contain' }}
+          />
           <div className={styles.pulseDot}></div>
           <span className={styles.pillText}>
             {isPlaying ? `Streaming: ${currentTrack.title} (Live Web Audio)` : 'NothingMusic Engine: Ready'}
@@ -85,7 +93,13 @@ export const InteractiveMusicDemo: React.FC = () => {
             <div
               className={`${styles.vinylCenter} ${isPlaying ? styles.spinningVinyl : ''}`}
             >
-              <Music2 size={36} className={styles.vinylIcon} />
+              <Image
+                src="/nothingmusic/soundwave-mark-white.svg"
+                alt="NothingMusic"
+                width={40}
+                height={52}
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.5))' }}
+              />
             </div>
             {/* Visualizer bars */}
             <div className={styles.eqVisualizer}>

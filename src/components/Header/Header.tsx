@@ -4,37 +4,32 @@ import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import { Logo } from '../Logo/Logo';
 import {
-  Search,
   Menu,
   X,
   ChevronRight,
-  ExternalLink,
-  Cpu,
-  Layers,
-  HardDrive,
+  MessageSquare,
   Share2,
   Music,
-  Video
+  Film,
+  Layers,
+  ArrowRight,
+  ShieldCheck,
+  HelpCircle
 } from 'lucide-react';
 
 interface HeaderProps {
   activeView?: string;
   onNavigate?: (view: string) => void;
   onSelectProduct?: (productId: string) => void;
-  onOpenRegistry?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeView = 'home',
   onNavigate,
   onSelectProduct,
-  onOpenRegistry,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,253 +39,190 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const scrollTo = (elementId: string) => {
     setMobileMenuOpen(false);
-    setSearchOpen(false);
-    setActiveDropdown(null);
     const elem = document.getElementById(elementId);
-    if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    if (elem) {
+      const headerOffset = 70;
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
-  const quickLinks = [
-    { label: 'Overview (NothingBox Labs)', target: 'landing-hero' },
-    { label: 'NothingChat (P2P Messaging)', target: 'hero-chat' },
-    { label: 'NothingDrop (WebRTC 50GB)', target: 'hero-drop' },
-    { label: 'NothingMusic (OPFS Audio)', target: 'hero-music' },
-    { label: 'NothingCinema (4K Chunk Stream)', target: 'hero-cinema' },
-    { label: '20 Subdomain Network Mesh', target: 'subdomain-carousel' },
-    { label: 'Compare All Services', target: 'service-comparison' },
-    { label: '100% Free Ecosystem', target: 'free-ecosystem' },
+  const navItems = [
+    { label: 'Overview', target: 'landing-hero' },
+    { label: 'Security', target: 'trust-compatibility' },
+    { label: 'NothingChat', target: 'hero-chat' },
+    { label: 'NothingDrop', target: 'hero-drop' },
+    { label: 'NothingMusic', target: 'hero-music' },
+    { label: 'NothingCinema', target: 'hero-cinema' },
+    { label: 'Compare', target: 'service-comparison' },
+    { label: 'FAQ', target: 'faq-section' },
+  ];
+
+  const mobileLinks = [
+    {
+      label: 'Overview',
+      desc: 'Architecture & ecosystem',
+      target: 'landing-hero',
+      icon: <Layers size={18} className={styles.mobileIconBlue} />,
+    },
+    {
+      label: 'Security & Compatibility',
+      desc: 'Zero-Knowledge browser audit',
+      target: 'trust-compatibility',
+      icon: <ShieldCheck size={18} className={styles.mobileIconGreen} />,
+    },
+    {
+      label: 'NothingChat',
+      desc: 'Encrypted P2P Messaging',
+      target: 'hero-chat',
+      icon: <MessageSquare size={18} className={styles.mobileIconBlue} />,
+    },
+    {
+      label: 'NothingDrop',
+      desc: '50GB Direct File Transfer',
+      target: 'hero-drop',
+      icon: <Share2 size={18} className={styles.mobileIconGreen} />,
+    },
+    {
+      label: 'NothingMusic',
+      desc: 'OPFS Lossless Audio',
+      target: 'hero-music',
+      icon: <Music size={18} className={styles.mobileIconPurple} />,
+    },
+    {
+      label: 'NothingCinema',
+      desc: '4K Hardware Media Stream',
+      target: 'hero-cinema',
+      icon: <Film size={18} className={styles.mobileIconOrange} />,
+    },
+    {
+      label: 'Compare Products',
+      desc: 'Side-by-side technical specs',
+      target: 'service-comparison',
+      icon: <ChevronRight size={18} className={styles.mobileIconMuted} />,
+    },
+    {
+      label: 'FAQ',
+      desc: 'Common technical questions',
+      target: 'faq-section',
+      icon: <HelpCircle size={18} className={styles.mobileIconBlue} />,
+    },
   ];
 
   return (
-    <>
-      <header
-        id="main-header"
-        className={`${styles.globalNav} ${isScrolled ? styles.navScrolled : ''}`}
-      >
-        <div className={styles.navContainer}>
-          {/* Brand Logo */}
+    <header
+      id="main-header"
+      className={`${styles.globalNav} ${isScrolled ? styles.navScrolled : ''}`}
+    >
+      <div className={styles.navContainer}>
+        {/* Brand Logo */}
+        <button
+          id="apple-logo-btn"
+          className={styles.appleLogoBtn}
+          onClick={() => scrollTo('landing-hero')}
+          aria-label="NothingBox Labs Home"
+        >
+          <Logo size={32} className={styles.brandLogoSvg} />
+          <span className={styles.appleBrandText}>NothingBox Labs</span>
+        </button>
+
+        {/* Desktop Navigation Links */}
+        <nav className={styles.navLinksList} aria-label="Main Navigation">
+          {navItems.map((item) => (
+            <button
+              key={item.target}
+              id={`nav-link-${item.target}`}
+              className={styles.navItem}
+              onClick={() => scrollTo(item.target)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Action Button & Mobile Toggle */}
+        <div className={styles.navUtilities}>
           <button
-            id="apple-logo-btn"
-            className={styles.appleLogoBtn}
-            onClick={() => scrollTo('landing-hero')}
-            aria-label="NothingBox Labs Home"
+            id="nav-cta-btn"
+            className={styles.desktopCtaBtn}
+            onClick={() => scrollTo('hero-chat')}
+            aria-label="Explore products"
           >
-            <Logo size={28} className={styles.brandLogoSvg} />
-            <span className={styles.appleBrandText}>NothingBox Labs</span>
+            <span>Explore</span>
+            <ArrowRight size={13} className={styles.ctaArrowIcon} />
           </button>
 
-          {/* Desktop Navigation Links */}
-          <nav className={styles.navLinksList}>
-            <button
-              id="nav-link-overview"
-              className={styles.navItem}
-              onClick={() => scrollTo('landing-hero')}
-            >
-              Overview
-            </button>
-            <button
-              id="nav-link-chat"
-              className={styles.navItem}
-              onClick={() => scrollTo('hero-chat')}
-            >
-              NothingChat
-            </button>
-            <button
-              id="nav-link-drop"
-              className={styles.navItem}
-              onClick={() => scrollTo('hero-drop')}
-            >
-              NothingDrop
-            </button>
-            <button
-              id="nav-link-music"
-              className={styles.navItem}
-              onClick={() => scrollTo('hero-music')}
-            >
-              NothingMusic
-            </button>
-            <button
-              id="nav-link-cinema"
-              className={styles.navItem}
-              onClick={() => scrollTo('hero-cinema')}
-            >
-              NothingCinema
-            </button>
-            <button
-              id="nav-link-subdomains"
-              className={styles.navItem}
-              onClick={() => scrollTo('subdomain-carousel')}
-            >
-              20 Services
-            </button>
-            <button
-              id="nav-link-compare"
-              className={styles.navItem}
-              onClick={() => scrollTo('service-comparison')}
-            >
-              Compare
-            </button>
-            <button
-              id="nav-link-free"
-              className={styles.navItemHighlight}
-              onClick={() => scrollTo('free-ecosystem')}
-            >
-              100% Free
-            </button>
-          </nav>
-
-          {/* Nav Utilities: Search & Free Pill */}
-          <div className={styles.navUtilities}>
-            <button
-              id="nav-search-toggle"
-              className={styles.utilityBtn}
-              onClick={() => setSearchOpen(!searchOpen)}
-              aria-label="Search NothingBox Labs"
-            >
-              <Search size={15} />
-            </button>
-
-            <button
-              id="nav-free-pill"
-              className={styles.freePillBtn}
-              onClick={() => scrollTo('free-ecosystem')}
-              aria-label="100% Free & Open"
-            >
-              <span>Free</span>
-            </button>
-
-            {/* Mobile Hamburger Toggle */}
-            <button
-              id="mobile-nav-toggle"
-              className={styles.mobileHamburger}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle Menu"
-            >
-              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-            </button>
-          </div>
+          {/* Mobile Hamburger Toggle */}
+          <button
+            id="mobile-nav-toggle"
+            className={styles.mobileHamburger}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
+      </div>
 
-        {/* Apple-style Interactive Search Flyout */}
-        {searchOpen && (
-          <div className={styles.searchFlyout}>
-            <div className={styles.searchInner}>
-              <div className={styles.searchBar}>
-                <Search size={18} className={styles.searchBarIcon} />
-                <input
-                  id="apple-search-input"
-                  type="text"
-                  placeholder="Search NothingChat, OPFS RAM, 20 Subdomains, WebRTC..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className={styles.searchBarInput}
-                  autoFocus
-                />
-                <button
-                  className={styles.searchCloseBtn}
-                  onClick={() => setSearchOpen(false)}
-                >
-                  <X size={16} />
-                </button>
-              </div>
-
-              <div className={styles.quickLinksGroup}>
-                <span className={styles.quickLinksTitle}>Quick Links</span>
-                <div className={styles.quickLinksList}>
-                  {quickLinks
-                    .filter((l) =>
-                      l.label.toLowerCase().includes(searchQuery.toLowerCase())
-                    )
-                    .map((item) => (
-                      <button
-                        key={item.target}
-                        className={styles.quickLinkItem}
-                        onClick={() => scrollTo(item.target)}
-                      >
-                        <ChevronRight size={14} className={styles.quickLinkArrow} />
-                        <span>{item.label}</span>
-                      </button>
-                    ))}
-                </div>
-              </div>
+      {/* Mobile Backdrop & Drawer */}
+      {mobileMenuOpen && (
+        <div className={styles.mobileBackdrop} onClick={() => setMobileMenuOpen(false)}>
+          <div
+            className={styles.mobileDropdownMenu}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className={styles.mobileMenuHeader}>
+              <span className={styles.mobileMenuSubtitle}>Products & Services</span>
             </div>
-          </div>
-        )}
 
-        {/* Mobile Full-Screen Apple Menu */}
-        {mobileMenuOpen && (
-          <div className={styles.mobileDrawer}>
             <div className={styles.mobileLinksContainer}>
+              {mobileLinks.map((link) => (
+                <button
+                  key={link.target}
+                  className={styles.mobileMenuLinkCard}
+                  onClick={() => scrollTo(link.target)}
+                >
+                  <div className={styles.mobileLinkIconWrap}>{link.icon}</div>
+                  <div className={styles.mobileLinkTextWrap}>
+                    <span className={styles.mobileLinkTitle}>{link.label}</span>
+                    <span className={styles.mobileLinkDesc}>{link.desc}</span>
+                  </div>
+                  <ChevronRight size={16} className={styles.mobileLinkChevron} />
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.mobileMenuFooter}>
               <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('landing-hero')}
-              >
-                Overview (NothingBox Labs)
-              </button>
-              <button
-                className={styles.mobileMenuLink}
+                className={styles.mobileLaunchBtn}
                 onClick={() => scrollTo('hero-chat')}
               >
-                NothingChat (P2P Messaging)
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('hero-drop')}
-              >
-                NothingDrop (50GB Transfer)
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('hero-music')}
-              >
-                NothingMusic (OPFS Audio)
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('hero-cinema')}
-              >
-                NothingCinema (4K Chunk Stream)
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('subdomain-carousel')}
-              >
-                20 Subdomain Network
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('service-comparison')}
-              >
-                Compare All Services
-              </button>
-              <button
-                className={styles.mobileMenuLink}
-                onClick={() => scrollTo('free-ecosystem')}
-              >
-                100% Free Ecosystem
+                <span>Launch NothingBox Suite</span>
+                <ArrowRight size={15} />
               </button>
             </div>
           </div>
-        )}
-      {/* Apple Announcement Ribbon */}
-      {/* <div id="apple-ribbon" className={styles.announcementRibbon}>
-        <div className={styles.ribbonContainer}>
-          <span className={styles.ribbonText}>
-            100% Free & Open Architecture. 4 Flagship Breakthroughs & 20 Subdomains with zero fees or subscriptions.
-          </span>
-          <button
-            className={styles.ribbonLink}
-            onClick={() => scrollTo('subdomain-carousel')}
-          >
-            <span>Explore the Suite</span>
-            <ChevronRight size={12} />
-          </button>
         </div>
-      </div> */}
-      </header>
-
-    </>
+      )}
+    </header>
   );
 };

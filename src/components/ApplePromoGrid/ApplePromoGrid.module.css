@@ -142,12 +142,12 @@
   justify-content: center;
 }
 
-.iconBlue { color: #0071e3; }
-.iconCyan { color: #0288d1; }
-.iconGreen { color: #34c759; }
-.iconOrange { color: #f56300; }
-.iconPurple { color: #af52de; }
-.iconRed { color: #ff3b30; }
+.iconBlue { color: #111827; }
+.iconCyan { color: #111827; }
+.iconGreen { color: #111827; }
+.iconOrange { color: #111827; }
+.iconPurple { color: #111827; }
+.iconRed { color: #111827; }
 
 .metricHighlight {
   font-size: 18px;

@@ -57,7 +57,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className={styles.cardHeader}>
         <div className={styles.iconWrap}>{getIcon()}</div>
         <div className={styles.headerMeta}>
-          <span className={styles.category}>{product.category}</span>
           <Badge variant={getStatusBadgeVariant()}>{product.status}</Badge>
         </div>
       </div>

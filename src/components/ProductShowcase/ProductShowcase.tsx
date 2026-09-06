@@ -55,7 +55,6 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
           {/* Left Column: Narrative, Architecture & Feature Specs */}
           <div className={styles.infoColumn}>
             <div className={styles.productMetaRow}>
-              <Badge variant="blue">{product.category}</Badge>
               <span className={styles.subdomainTag}>
                 Planned: {product.subdomain}
               </span>

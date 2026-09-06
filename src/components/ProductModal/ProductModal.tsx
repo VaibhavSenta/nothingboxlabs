@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './ProductModal.module.css';
 import { CoreProduct } from '../../types/products';
 import { Logo } from '../Logo/Logo';
@@ -26,11 +27,28 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
         <div className={styles.modalHeader}>
           <div className={styles.headerInfo}>
             <div className={styles.tagGroup}>
-              <Badge variant="blue">{product.category}</Badge>
               <Badge variant="subtle">{product.status}</Badge>
             </div>
             <div className={styles.titleRow}>
-              <Logo size={30} className={styles.modalLogo} />
+              {product.id === 'chat-app' ? (
+                <Image
+                  src="/nothingchat/icon-mark.svg"
+                  alt="NothingChat"
+                  width={36}
+                  height={36}
+                  style={{ borderRadius: 8, objectFit: 'contain' }}
+                />
+              ) : product.id === 'music-player' ? (
+                <Image
+                  src="/nothingmusic/icon-mark.svg"
+                  alt="NothingMusic"
+                  width={28}
+                  height={36}
+                  style={{ borderRadius: 6, objectFit: 'contain' }}
+                />
+              ) : (
+                <Logo size={36} className={styles.modalLogo} />
+              )}
               <h3 className={styles.title}>{product.title}</h3>
             </div>
             <span className={styles.subdomain}>{product.subdomain}</span>

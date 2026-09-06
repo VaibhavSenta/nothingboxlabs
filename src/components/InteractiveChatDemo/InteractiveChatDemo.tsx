@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './InteractiveChatDemo.module.css';
 import { Badge } from '../Badge/Badge';
 import {
@@ -158,12 +159,18 @@ export const InteractiveChatDemo: React.FC = () => {
       <div className={styles.phoneHeader}>
         <div className={styles.avatarGroup}>
           <div className={styles.avatar}>
-            <span className={styles.avatarInitial}>NB</span>
+            <Image
+              src="/nothingchat/icon-mark.svg"
+              alt="NothingChat"
+              width={42}
+              height={42}
+              style={{ borderRadius: '50%', objectFit: 'contain' }}
+            />
             <span className={styles.onlineDot}></span>
           </div>
           <div className={styles.userInfo}>
             <span className={styles.userName}>Aria (NothingChat P2P)</span>
-            <span className={styles.userStatus}>End-to-End Encrypted • WebSocket Active</span>
+            <span className={styles.userStatus}>End-to-End Encrypted • Direct Mesh</span>
           </div>
         </div>
         <div className={styles.headerBadges}>
@@ -174,6 +181,16 @@ export const InteractiveChatDemo: React.FC = () => {
 
       {/* Message Thread */}
       <div className={styles.thread}>
+        <div className={styles.verifiedRoomPill}>
+          <Image
+            src="/nothingchat/icon-mark.svg"
+            alt="NothingChat"
+            width={20}
+            height={20}
+            style={{ borderRadius: 4, objectFit: 'contain' }}
+          />
+          <span>NothingChat Encrypted WebRTC Session • 0 Cloud Logs</span>
+        </div>
         {messages.map((msg) => {
           if (msg.type === 'text') {
             const isUser = msg.sender === 'user';

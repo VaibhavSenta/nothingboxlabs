@@ -106,10 +106,10 @@
   margin-bottom: 16px;
 }
 
-.iconBlue { color: #0071e3; }
-.iconGreen { color: #34c759; }
-.iconPurple { color: #af52de; }
-.iconOrange { color: #f56300; }
+.iconBlue { color: #111827; }
+.iconGreen { color: #111827; }
+.iconPurple { color: #111827; }
+.iconOrange { color: #111827; }
 
 .serviceTitle {
   font-size: 22px;

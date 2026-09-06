@@ -1,0 +1,194 @@
+.section {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrowPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+  background-color: #f3f4f6;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.eyebrowIcon {
+  color: #111827;
+}
+
+.headline {
+  font-size: 38px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.subhead {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+/* Accordion List */
+.accordionList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqCard {
+  background-color: #fbfbfd;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faqCard:hover {
+  border-color: rgba(0, 0, 0, 0.14);
+  background-color: #f8fafc;
+}
+
+.faqCardOpen {
+  background-color: #ffffff;
+  border-color: rgba(0, 113, 227, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 113, 227, 0.06);
+}
+
+.faqButton {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.iconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.iconWrapRotated {
+  transform: rotate(180deg);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.chevronIcon {
+  color: #111827;
+  transition: color 0.2s ease;
+}
+
+.faqCardOpen .chevronIcon {
+  color: #111827;
+}
+
+/* Answer Accordion Animation */
+.answerWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  opacity: 0;
+}
+
+.answerWrapperOpen {
+  max-height: 260px;
+  opacity: 1;
+}
+
+.answerContent {
+  padding: 0 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answerText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.categoryTag {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #111827;
+  background: #f3f4f6;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 50px 16px;
+  }
+
+  .headline {
+    font-size: 28px;
+  }
+
+  .faqButton {
+    padding: 16px 18px;
+  }
+
+  .questionText {
+    font-size: 15px;
+  }
+
+  .answerContent {
+    padding: 0 18px 16px;
+  }
+}

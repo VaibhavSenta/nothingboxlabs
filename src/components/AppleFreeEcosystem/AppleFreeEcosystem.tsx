@@ -70,16 +70,16 @@ export const AppleFreeEcosystem: React.FC<AppleFreeEcosystemProps> = ({ onOpenSp
     },
     {
       icon: <Globe2 size={24} className={styles.iconPurple} />,
-      title: 'Full 20-Subdomain Suite',
-      stat: '20 Tools',
-      statLabel: 'Complete open ecosystem',
+      title: 'Modular Micro-Architecture',
+      stat: 'Autonomous',
+      statLabel: 'Decentralized ecosystem',
       description:
-        'You get unmetered access to all 20 isolated subdomain services across the NothingBox Labs network mesh without paying for individual add-ons.',
+        'Independent, sandboxed application modules operate autonomously. If one node or peer disconnects, the rest of your computing environment runs uninterrupted.',
       bulletPoints: [
         'NothingChat, NothingDrop, NothingMusic, & NothingCinema',
-        'Specialized developer tools, vaults, and monitors',
-        'Isolated sandboxed micro-frontends',
-        'Community-driven open development',
+        'Direct peer discovery via WebRTC signaling',
+        'Isolated sandboxed browser execution',
+        'Open architecture for community auditability',
       ],
     },
   ];
@@ -90,13 +90,13 @@ export const AppleFreeEcosystem: React.FC<AppleFreeEcosystemProps> = ({ onOpenSp
         {/* Apple Centered Header Block */}
         <div className={styles.headerBlock}>
           <div className={styles.headerLogoWrap}>
-            <Logo size={52} className={styles.ecosystemLogo} />
+            <Logo size={64} className={styles.ecosystemLogo} />
           </div>
-          <span className={styles.eyebrow}>100% Free & Open Ecosystem</span>
-          <h2 className={styles.headline}>No subscriptions. No paywalls. Everything is free.</h2>
+          <span className={styles.eyebrow}>Decentralized Computing Suite</span>
+          <h2 className={styles.headline}>Engineered for raw browser power. Zero cloud overhead.</h2>
           <p className={styles.subhead}>
             NothingBox Labs is engineered on the principle that modern browsers have supercomputer capabilities.
-            Because your device performs the computation and peers connect directly, there are zero server costs to pass on to you.
+            Because your device performs the computation and peers connect directly, applications operate with zero server dependencies.
           </p>
         </div>
 
@@ -134,9 +134,9 @@ export const AppleFreeEcosystem: React.FC<AppleFreeEcosystemProps> = ({ onOpenSp
               <span className={styles.pulseDot}></span>
               <span>Live & Ready to Use</span>
             </div>
-            <h3 className={styles.calloutTitle}>Experience NothingBox Labs instantly</h3>
+            <h3 className={styles.calloutTitle}>Experience NothingBox Labs</h3>
             <p className={styles.calloutSub}>
-              Jump straight into any flagship tool or explore the full subdomain mesh. No installation, no login.
+              Explore the flagship suite directly inside your browser. No installation, no account creation.
             </p>
           </div>
 
@@ -145,22 +145,15 @@ export const AppleFreeEcosystem: React.FC<AppleFreeEcosystemProps> = ({ onOpenSp
               className={styles.primaryLaunchBtn}
               onClick={() => scrollTo('hero-chat')}
             >
-              <span>Try NothingChat</span>
+              <span>Explore NothingChat</span>
               <ChevronRight size={14} />
             </button>
             <button
               className={styles.secondaryLaunchBtn}
               onClick={() => scrollTo('hero-drop')}
             >
-              <span>Try NothingDrop</span>
+              <span>Explore NothingDrop</span>
               <ChevronRight size={14} />
-            </button>
-            <button
-              className={styles.secondaryLaunchBtn}
-              onClick={() => scrollTo('subdomain-carousel')}
-            >
-              <span>Explore 20 Subdomains</span>
-              <ArrowUpRight size={14} />
             </button>
           </div>
         </div>

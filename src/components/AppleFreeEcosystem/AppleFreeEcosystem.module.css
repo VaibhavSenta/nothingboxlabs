@@ -108,10 +108,10 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-.iconBlue { color: #0071e3; }
-.iconGreen { color: #34c759; }
-.iconOrange { color: #f56300; }
-.iconPurple { color: #af52de; }
+.iconBlue { color: #111827; }
+.iconGreen { color: #111827; }
+.iconOrange { color: #111827; }
+.iconPurple { color: #111827; }
 
 .statBox {
   display: flex;

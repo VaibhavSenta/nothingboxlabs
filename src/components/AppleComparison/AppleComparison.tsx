@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './AppleComparison.module.css';
 import { Logo } from '../Logo/Logo';
 import {
@@ -27,7 +28,15 @@ export const AppleComparison: React.FC<AppleComparisonProps> = ({ onOpenSpecs })
       slug: 'nothing-chat',
       name: 'NothingChat',
       tagline: 'Private messaging. Zero footprint.',
-      icon: <MessageSquare size={28} className={styles.iconBlue} />,
+      icon: (
+        <Image
+          src="/nothingchat/icon-mark.svg"
+          alt="NothingChat"
+          width={36}
+          height={36}
+          style={{ borderRadius: 8, objectFit: 'contain' }}
+        />
+      ),
       accentColor: '#2997ff',
       specs: {
         architecture: 'Direct WebRTC Mesh',
@@ -43,7 +52,7 @@ export const AppleComparison: React.FC<AppleComparisonProps> = ({ onOpenSpecs })
       slug: 'nothing-drop',
       name: 'NothingDrop',
       tagline: '50GB AirDrop for the open web.',
-      icon: <Share2 size={28} className={styles.iconGreen} />,
+      icon: <Share2 size={32} className={styles.iconGreen} />,
       accentColor: '#30d158',
       specs: {
         architecture: '64KB Chunk Slicing',
@@ -59,7 +68,15 @@ export const AppleComparison: React.FC<AppleComparisonProps> = ({ onOpenSpecs })
       slug: 'nothing-music',
       name: 'NothingMusic',
       tagline: 'Lossless sound. Local speed.',
-      icon: <Music size={28} className={styles.iconPurple} />,
+      icon: (
+        <Image
+          src="/nothingmusic/icon-mark.svg"
+          alt="NothingMusic"
+          width={28}
+          height={36}
+          style={{ borderRadius: 6, objectFit: 'contain' }}
+        />
+      ),
       accentColor: '#bf5af2',
       specs: {
         architecture: 'OPFS Native Audio Engine',
@@ -75,7 +92,7 @@ export const AppleComparison: React.FC<AppleComparisonProps> = ({ onOpenSpecs })
       slug: 'nothing-cinema',
       name: 'NothingCinema 4K',
       tagline: '4K Master streaming. Zero buffer.',
-      icon: <Film size={28} className={styles.iconOrange} />,
+      icon: <Film size={32} className={styles.iconOrange} />,
       accentColor: '#ff9f0a',
       specs: {
         architecture: 'SyncAccessHandle Virtual RAM',
@@ -94,7 +111,7 @@ export const AppleComparison: React.FC<AppleComparisonProps> = ({ onOpenSpecs })
         {/* Apple Centered Header */}
         <div className={styles.headerBlock}>
           <div className={styles.headerLogoWrap}>
-            <Logo size={48} className={styles.comparisonHeaderLogo} />
+            <Logo size={56} className={styles.comparisonHeaderLogo} />
           </div>
           <span className={styles.eyebrow}>Compare Services</span>
           <h2 className={styles.headline}>Which NothingBox Labs service is right for you?</h2>

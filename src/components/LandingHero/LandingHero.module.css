@@ -172,10 +172,10 @@
   justify-content: center;
 }
 
-.pillIconBlue { color: #0071e3; }
-.pillIconGreen { color: #34c759; }
-.pillIconPink { color: #ff2d55; }
-.pillIconOrange { color: #f56300; }
+.pillIconBlue { color: #111827; }
+.pillIconGreen { color: #111827; }
+.pillIconPink { color: #111827; }
+.pillIconOrange { color: #111827; }
 
 .pillTextWrap {
   display: flex;
@@ -280,7 +280,7 @@
 }
 
 .sparkleIcon {
-  color: #0071e3;
+  color: #111827;
 }
 
 /* Bottom Metrics Ribbon */
@@ -317,10 +317,10 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-.iconAmber { color: #f56300; }
-.iconBlue { color: #0071e3; }
-.iconGreen { color: #34c759; }
-.iconPurple { color: #af52de; }
+.iconAmber { color: #111827; }
+.iconBlue { color: #111827; }
+.iconGreen { color: #111827; }
+.iconPurple { color: #111827; }
 
 .metricInfo {
   display: flex;

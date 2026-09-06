@@ -110,7 +110,6 @@ export const SubdomainRegistry: React.FC = () => {
                   </div>
                   <div>
                     <h3 className={styles.subdomainName}>{item.name}</h3>
-                    <span className={styles.subdomainCategory}>{item.category}</span>
                   </div>
                 </div>
                 {getStatusBadge(item.status)}

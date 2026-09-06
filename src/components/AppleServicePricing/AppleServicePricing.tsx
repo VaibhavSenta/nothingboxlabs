@@ -83,7 +83,7 @@ export const AppleServicePricing: React.FC<AppleServicePricingProps> = ({ onBagC
         {/* Apple Centered Header */}
         <div className={styles.headerBlock}>
           <div className={styles.headerLogoWrap}>
-            <Logo size={40} className={styles.pricingLogo} />
+            <Logo size={52} className={styles.pricingLogo} />
           </div>
           <span className={styles.eyebrow}>NothingBox Services</span>
           <h2 className={styles.headline}>One seamless ecosystem. Simple plans.</h2>

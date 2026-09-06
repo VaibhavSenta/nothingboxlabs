@@ -1,14 +1,12 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './AppleHero.module.css';
 import { CoreProduct } from '../../types/products';
 import { Logo } from '../Logo/Logo';
-import { InteractiveChatDemo } from '../InteractiveChatDemo/InteractiveChatDemo';
-import { InteractiveTransferDemo } from '../InteractiveTransferDemo/InteractiveTransferDemo';
-import { InteractiveMusicDemo } from '../InteractiveMusicDemo/InteractiveMusicDemo';
-import { InteractiveVideoDemo } from '../InteractiveVideoDemo/InteractiveVideoDemo';
-import { ChevronRight, ExternalLink, Cpu } from 'lucide-react';
+import { ProductFeatureCards } from '../ProductFeatureCards/ProductFeatureCards';
+import { ChevronRight } from 'lucide-react';
 
 interface AppleHeroProps {
   product: CoreProduct;
@@ -25,21 +23,6 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
   onLaunchApp,
   sectionId,
 }) => {
-  const renderDeviceContent = () => {
-    switch (product.id) {
-      case 'chat-app':
-        return <InteractiveChatDemo />;
-      case 'p2p-transfer':
-        return <InteractiveTransferDemo />;
-      case 'music-player':
-        return <InteractiveMusicDemo />;
-      case 'video-player':
-        return <InteractiveVideoDemo />;
-      default:
-        return null;
-    }
-  };
-
   const getThemeClass = () => {
     switch (theme) {
       case 'ultramarine':
@@ -59,11 +42,32 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
       <div className={styles.heroContent}>
         {/* Apple Centered Text Block */}
         <div className={styles.headerBlock}>
-          <div className={styles.brandHeroBadge}>
-            <Logo size={36} className={styles.heroLogoMark} />
-            <span className={styles.eyebrowTag}>{product.category}</span>
-          </div>
-          <h2 className={styles.productHeadline}>{product.title}</h2>
+          {product.id === 'chat-app' || product.id === 'music-player' ? (
+            /* Official Brand Lockup Banners already include the brand emblem and typographic title */
+            <div className={styles.lockupBannerWrap}>
+              <Image
+                src={
+                  product.id === 'chat-app'
+                    ? '/nothingchat/lockup-clean.svg'
+                    : '/nothingmusic/lockup-clean.svg'
+                }
+                alt={product.title}
+                width={product.id === 'chat-app' ? 340 : 380}
+                height={product.id === 'chat-app' ? 78 : 70}
+                className={styles.lockupBannerImg}
+                priority
+              />
+              <h2 className="sr-only">{product.title}</h2>
+            </div>
+          ) : (
+            <>
+              <div className={styles.brandHeroBadge}>
+                <Logo size={38} className={styles.heroLogoMark} />
+              </div>
+              <h2 className={styles.productHeadline}>{product.title}</h2>
+            </>
+          )}
+
           <p className={styles.productSubhead}>{product.tagline}</p>
 
           {/* Apple Action Links */}
@@ -73,7 +77,7 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
               className={styles.applePrimaryBtn}
               onClick={() => onOpenSpecs(product)}
             >
-              <span>Learn more</span>
+              <span>Explore Architecture & Specs</span>
             </button>
 
             <button
@@ -99,13 +103,9 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
           </div>
         </div>
 
-        {/* Apple Device Frame Stage */}
-        <div className={styles.deviceStage}>
-          <div className={styles.deviceMockupFrame}>
-            <div className={styles.deviceScreen}>
-              {renderDeviceContent()}
-            </div>
-          </div>
+        {/* Feature Cards Showcase Stage */}
+        <div className={styles.showcaseStage}>
+          <ProductFeatureCards product={product} onOpenSpecs={onOpenSpecs} />
         </div>
       </div>
     </section>

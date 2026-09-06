@@ -27,14 +27,14 @@ export const ApplePromoGrid: React.FC<ApplePromoGridProps> = ({
   const promos = [
     {
       id: 'promo-subdomains',
-      eyebrow: 'Federated Suite',
-      title: '20 Subdomain Network',
-      description: 'Dedicated isolated micro-frontends running across subdomains with zero cross-service degradation.',
-      linkText: 'Explore the 20 Subdomains',
-      action: onOpenSubdomains,
+      eyebrow: 'Federated Architecture',
+      title: 'Decentralized P2P Mesh',
+      description: 'Dedicated client-side modules communicating directly between browser nodes with zero cloud relay bottlenecks.',
+      linkText: 'Explore System Architecture',
+      action: onOpenSpecs,
       icon: <Layers size={28} className={styles.iconBlue} />,
-      badge: 'Isolated Port Mesh',
-      metric: '20 Endpoints'
+      badge: 'Client Node Mesh',
+      metric: 'Direct P2P'
     },
     {
       id: 'promo-opfs',

@@ -9,7 +9,8 @@ import { LandingHero } from '../components/LandingHero/LandingHero';
 import { AppleHero } from '../components/AppleHero/AppleHero';
 import { ApplePromoGrid } from '../components/ApplePromoGrid/ApplePromoGrid';
 import { AppleComparison } from '../components/AppleComparison/AppleComparison';
-import { AppleSubdomainCarousel } from '../components/AppleSubdomainCarousel/AppleSubdomainCarousel';
+import { TrustAndCompatibility } from '../components/TrustAndCompatibility/TrustAndCompatibility';
+import { AppleFAQ } from '../components/AppleFAQ/AppleFAQ';
 import { AppleFreeEcosystem } from '../components/AppleFreeEcosystem/AppleFreeEcosystem';
 import { ProductModal } from '../components/ProductModal/ProductModal';
 import { Footer } from '../components/Footer/Footer';
@@ -38,7 +39,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* Apple 44px Blur Navigation Bar & Announcement Ribbon */}
+      {/* Apple 44px Blur Navigation Bar */}
       <Header />
 
       {/* Full Device Height Landing / Ecosystem Introduction: NothingBox Labs */}
@@ -48,14 +49,17 @@ export default function Home() {
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onExploreSubdomains={() => {
-          const elem = document.getElementById('subdomain-carousel');
+          const elem = document.getElementById('service-comparison');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onExploreFree={() => {
-          const elem = document.getElementById('free-ecosystem');
+          const elem = document.getElementById('service-comparison');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
       />
+
+      {/* Zero-Knowledge Security Trust Bar & Live Browser Hardware Compatibility Audit */}
+      <TrustAndCompatibility />
 
       {/* Flagship Apple Hero 1: NothingChat (Dark Titanium) */}
       <AppleHero
@@ -89,10 +93,10 @@ export default function Home() {
         onOpenSpecs={handleOpenSpecs}
       />
 
-      {/* Apple 2-Column Promo Grid (Apple Intelligence & Architectural Breakthroughs) */}
+      {/* Apple 2-Column Promo Grid (Architectural Breakthroughs) */}
       <ApplePromoGrid
         onOpenSubdomains={() => {
-          const elem = document.getElementById('subdomain-carousel');
+          const elem = document.getElementById('service-comparison');
           if (elem) elem.scrollIntoView({ behavior: 'smooth' });
         }}
         onOpenSpecs={() => handleOpenSpecs(chatProduct)}
@@ -101,10 +105,10 @@ export default function Home() {
       {/* Apple 4-Column "Which Service is Right for You?" Comparison Matrix */}
       <AppleComparison onOpenSpecs={handleOpenSpecsBySlug} />
 
-      {/* Apple TV+ Style Interactive Filmstrip for 20 Subdomains / Services */}
-      <AppleSubdomainCarousel />
+      {/* Apple-Style Frequently Asked Questions Accordion */}
+      <AppleFAQ />
 
-      {/* 100% Free & Open Architecture - Zero Fees & Zero Subscriptions */}
+      {/* Open Architecture - Zero Fees & Zero Cloud Dependencies */}
       <AppleFreeEcosystem onOpenSpecsBySlug={handleOpenSpecsBySlug} />
 
       {/* Apple 5-Column Directory & Legal Footnotes Footer */}

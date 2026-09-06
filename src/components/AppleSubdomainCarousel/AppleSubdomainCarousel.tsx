@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 import styles from './AppleSubdomainCarousel.module.css';
 import { SUBDOMAIN_REGISTRY } from '../../data/productsData';
 import {
@@ -116,10 +117,27 @@ export const AppleSubdomainCarousel: React.FC = () => {
 
               <div className={styles.coverCenter}>
                 <div className={styles.globeWrap}>
-                  <Globe size={24} className={styles.globeIcon} />
+                  {item.id === 'sub-1' ? (
+                    <Image
+                      src="/nothingchat/icon-mark.svg"
+                      alt="NothingChat"
+                      width={34}
+                      height={34}
+                      style={{ borderRadius: 8, objectFit: 'contain' }}
+                    />
+                  ) : item.id === 'sub-3' ? (
+                    <Image
+                      src="/nothingmusic/icon-mark.svg"
+                      alt="NothingMusic"
+                      width={26}
+                      height={34}
+                      style={{ borderRadius: 6, objectFit: 'contain' }}
+                    />
+                  ) : (
+                    <Globe size={28} className={styles.globeIcon} />
+                  )}
                 </div>
                 <h4 className={styles.itemName}>{item.name}</h4>
-                <span className={styles.itemCategory}>{item.category}</span>
               </div>
 
               <div className={styles.coverBottom}>

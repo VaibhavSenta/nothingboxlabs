@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './LandingHero.module.css';
 import { Logo } from '../Logo/Logo';
 import {
@@ -40,45 +41,51 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
       id: 'hero-chat',
       title: 'NothingChat',
       badge: 'P2P Encrypted',
-      icon: <MessageSquare size={16} className={styles.pillIconBlue} />,
+      icon: (
+        <Image
+          src="/nothingchat/icon-mark.svg"
+          alt="NothingChat"
+          width={22}
+          height={22}
+          style={{ borderRadius: 4, objectFit: 'contain', display: 'inline-block' }}
+        />
+      ),
     },
     {
       id: 'hero-drop',
       title: 'NothingDrop',
       badge: '50GB AirDrop',
-      icon: <Share2 size={16} className={styles.pillIconGreen} />,
+      icon: <Share2 size={20} className={styles.pillIconGreen} />,
     },
     {
       id: 'hero-music',
       title: 'NothingMusic',
       badge: 'OPFS Hi-Res',
-      icon: <Music size={16} className={styles.pillIconPink} />,
+      icon: (
+        <Image
+          src="/nothingmusic/icon-mark.svg"
+          alt="NothingMusic"
+          width={18}
+          height={24}
+          style={{ borderRadius: 3, objectFit: 'contain', display: 'inline-block' }}
+        />
+      ),
     },
     {
       id: 'hero-cinema',
       title: 'NothingCinema',
       badge: '4K Peer Stream',
-      icon: <Film size={16} className={styles.pillIconOrange} />,
+      icon: <Film size={20} className={styles.pillIconOrange} />,
     },
   ];
 
   return (
     <section id="landing-hero" className={styles.heroSection}>
       <div className={styles.container}>
-        {/* Top Eyebrow Badge */}
-        <div className={styles.eyebrowWrapper}>
-          <div className={styles.badgePill}>
-            <span className={styles.pulseIndicator}></span>
-            <span className={styles.badgeText}>The Browser-Native Computing Suite</span>
-            <span className={styles.badgeDivider}>•</span>
-            <span className={styles.badgeHighlight}>100% Free Forever</span>
-          </div>
-        </div>
-
         {/* Central Brand Emblem & Identity */}
         <div className={styles.brandHeroEmblem}>
           <div className={styles.logoFrame}>
-            <Logo size={84} className={styles.mainHeroLogo} id="landing-hero-logo" />
+            <Logo size={96} className={styles.mainHeroLogo} id="landing-hero-logo" />
           </div>
         </div>
 
@@ -88,12 +95,12 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             NothingBox Labs<span className={styles.periodAccent}>.</span>
           </h1>
           <p className={styles.subHeadline}>
-            Engineered for raw browser power. Zero cloud servers. Free forever.
+            Engineered for raw browser power. Zero cloud servers.
           </p>
           <p className={styles.bodyDescription}>
-            A breakthrough ecosystem of 20 decentralized web applications running purely inside your hardware.
+            A breakthrough ecosystem of decentralized web applications running purely inside your hardware.
             From encrypted peer-to-peer communications and 50GB file transfers to high-fidelity audio and 4K cinema streaming.
-            No accounts, no telemetry, no subscription fees.
+            No accounts, no telemetry, zero server dependencies.
           </p>
         </div>
 
@@ -123,24 +130,16 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             className={styles.primaryBtn}
             onClick={() => scrollTo('hero-chat')}
           >
-            <span>Explore Flagship Apps</span>
+            <span>Explore Flagship Suite</span>
             <ArrowRight size={16} />
           </button>
           <button
-            id="hero-cta-subdomains"
+            id="hero-cta-compare"
             className={styles.secondaryBtn}
-            onClick={() => scrollTo('subdomain-carousel')}
+            onClick={() => scrollTo('service-comparison')}
           >
-            <span>View 20 Subdomains</span>
+            <span>Compare Services</span>
             <ChevronRight size={16} />
-          </button>
-          <button
-            id="hero-cta-free"
-            className={styles.tertiaryBtn}
-            onClick={() => scrollTo('free-ecosystem')}
-          >
-            <span>Why It&apos;s 100% Free</span>
-            <Sparkles size={14} className={styles.sparkleIcon} />
           </button>
         </div>
 
@@ -163,8 +162,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
               <Globe2 size={18} className={styles.iconBlue} />
             </div>
             <div className={styles.metricInfo}>
-              <span className={styles.metricValue}>20 Subdomains</span>
-              <span className={styles.metricLabel}>Dedicated micro-frontends</span>
+              <span className={styles.metricValue}>Direct P2P Mesh</span>
+              <span className={styles.metricLabel}>Browser-to-browser WebRTC</span>
             </div>
           </div>
 
@@ -187,8 +186,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
               <Sparkles size={18} className={styles.iconPurple} />
             </div>
             <div className={styles.metricInfo}>
-              <span className={styles.metricValue}>$0.00 Forever</span>
-              <span className={styles.metricLabel}>No billing, accounts, or trials</span>
+              <span className={styles.metricValue}>Hardware Native</span>
+              <span className={styles.metricLabel}>OPFS & WebCodecs performance</span>
             </div>
           </div>
         </div>

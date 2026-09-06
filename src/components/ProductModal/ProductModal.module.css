@@ -147,10 +147,10 @@
   color: #6e6e73;
 }
 
-.archIconBlue { color: #0071e3; }
-.archIconCyan { color: #0288d1; }
-.archIconPurple { color: #af52de; }
-.archIconGreen { color: #34c759; }
+.archIconBlue { color: #111827; }
+.archIconCyan { color: #111827; }
+.archIconPurple { color: #111827; }
+.archIconGreen { color: #111827; }
 
 .archValue {
   font-size: 13px;

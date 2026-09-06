@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               2. WebRTC Data Channels establish direct peer-to-peer transport tunnels using DTLS and SCTP protocol encryption. 50GB file transfers bypass central cloud storage completely without intermediate disk writes or monthly bandwidth overhead.
             </li>
             <li className={styles.footnoteItem}>
-              3. The 20 Subdomain Network represents a decoupled micro-frontend topology where individual tools run isolated on their respective subdomains (ports 3001 through 3020) without shared runtime execution bottlenecks.
+              3. The NothingBox Labs Architecture represents a decoupled micro-frontend topology where individual tools run isolated without shared runtime execution bottlenecks.
             </li>
             <li className={styles.footnoteItem}>
               4. Real-time Google Maps Places search and Cloud Translation features operate directly within contextual message bubbles in NothingChat via secure client-side API proxies.
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
 
         {/* Apple Breadcrumb Bar */}
         <nav className={styles.breadcrumbBar} aria-label="Breadcrumbs">
-          <Logo size={22} className={styles.footerLogoGlyph} />
+          <Logo size={26} className={styles.footerLogoGlyph} />
           <ChevronRight size={12} className={styles.breadcrumbChevron} />
           <span className={styles.breadcrumbItem}>NothingBox Labs</span>
           <ChevronRight size={12} className={styles.breadcrumbChevron} />
@@ -46,8 +46,9 @@ export const Footer: React.FC = () => {
               <li><a href="#hero-drop" className={styles.colLink}>NothingDrop P2P</a></li>
               <li><a href="#hero-music" className={styles.colLink}>NothingMusic</a></li>
               <li><a href="#hero-cinema" className={styles.colLink}>NothingCinema 4K</a></li>
-              <li><a href="#subdomain-carousel" className={styles.colLink}>20 Subdomain Mesh</a></li>
-              <li><a href="#promo-grid" className={styles.colLink}>Architecture Whitepaper</a></li>
+              <li><a href="#service-comparison" className={styles.colLink}>Comparison Matrix</a></li>
+              <li><a href="#trust-compatibility" className={styles.colLink}>Security & Audit</a></li>
+              <li><a href="#faq-section" className={styles.colLink}>Frequently Asked Questions</a></li>
             </ul>
           </div>
 
@@ -55,10 +56,10 @@ export const Footer: React.FC = () => {
           <div className={styles.directoryCol}>
             <span className={styles.colHeader}>Account & Identity</span>
             <ul className={styles.colLinks}>
-              <li><a href="https://auth.nothingboxlabs.com" className={styles.colLink}>NothingAuth Passkey</a></li>
-              <li><a href="https://vault.nothingboxlabs.com" className={styles.colLink}>NothingVault Encrypted</a></li>
-              <li><a href="#subdomain-carousel" className={styles.colLink}>Biometric WebAuthn</a></li>
-              <li><a href="#subdomain-carousel" className={styles.colLink}>Session Management</a></li>
+              <li><a href="#service-comparison" className={styles.colLink}>NothingAuth Passkey</a></li>
+              <li><a href="#service-comparison" className={styles.colLink}>NothingVault Encrypted</a></li>
+              <li><a href="#service-comparison" className={styles.colLink}>Biometric WebAuthn</a></li>
+              <li><a href="#service-comparison" className={styles.colLink}>Session Management</a></li>
             </ul>
           </div>
 
