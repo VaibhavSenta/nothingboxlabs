@@ -1,0 +1,295 @@
+/* Apple-inspired Frosted Glass Blob Card for NothingBox Labs */
+.card {
+  position: relative;
+  width: 196px;
+  height: 260px;
+  background: #fbfbfd;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
+  z-index: 1;
+  border-radius: 22px;
+  overflow: hidden;
+  transform: rotate(var(--card-rotation, -2deg));
+  cursor: pointer;
+  padding: 0;
+  text-align: inherit;
+  font-family: inherit;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+.card:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.03);
+  box-shadow: 0 22px 42px -12px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.card:focus-visible {
+  outline: 3px solid #0071e3;
+  outline-offset: 4px;
+}
+
+.cardContent {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.76) 0%, rgba(245, 245, 247, 0.45) 100%);
+  z-index: 1;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 14px 14px;
+  box-sizing: border-box;
+}
+
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.badgePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.variantBlue .badgeDot {
+  background-color: #0071e3;
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
+}
+
+.variantEmerald .badgeDot {
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.variantPurple .badgeDot {
+  background-color: #af52de;
+  box-shadow: 0 0 0 2px rgba(175, 82, 222, 0.2);
+}
+
+.variantAmber .badgeDot {
+  background-color: #f56300;
+  box-shadow: 0 0 0 2px rgba(245, 99, 0, 0.2);
+}
+
+.iconFrame {
+  width: 60px;
+  height: 60px;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.card:hover .iconFrame {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.09);
+}
+
+.textStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.subdomain {
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.actionPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px 13px;
+  border-radius: 9999px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.card:hover .actionPill {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+.actionChevron {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .actionChevron {
+  transform: translateX(2px);
+}
+
+/* Ambient Frosted Glass Blobs */
+.blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  width: 155px;
+  height: 155px;
+  filter: blur(18px);
+  opacity: 0.42;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .blob {
+  opacity: 0.54;
+}
+
+.blob1 {
+  left: -60px;
+  top: -45px;
+  transform: rotate(12deg);
+  animation: floatBlob1 9s ease-in-out infinite alternate;
+}
+
+.blob2 {
+  left: -30px;
+  top: 120px;
+  transform: rotate(20deg);
+  animation: floatBlob2 10s ease-in-out infinite alternate;
+}
+
+.blob3 {
+  right: -55px;
+  bottom: -15px;
+  transform: rotate(-10deg);
+  animation: floatBlob3 11s ease-in-out infinite alternate;
+}
+
+.blob4 {
+  right: -65px;
+  top: 15px;
+  transform: rotate(-25deg);
+  animation: floatBlob4 8s ease-in-out infinite alternate;
+}
+
+/* --- THEME VARIANT: Blue (NothingChat - Decentralized P2P Mesh) --- */
+.variantBlue .blob1 {
+  background: linear-gradient(135deg, #0071e3, #2997ff, #70b8ff);
+}
+.variantBlue .blob2 {
+  background: linear-gradient(135deg, #5ac8fa, #0071e3);
+}
+.variantBlue .blob3 {
+  background: linear-gradient(135deg, #5856d6, #0071e3);
+}
+.variantBlue .blob4 {
+  background: linear-gradient(135deg, #bae6fd, #38bdf8);
+}
+
+/* --- THEME VARIANT: Emerald (NothingDrop - 50GB Local AirDrop) --- */
+.variantEmerald .blob1 {
+  background: linear-gradient(135deg, #059669, #10b981, #34c759);
+}
+.variantEmerald .blob2 {
+  background: linear-gradient(135deg, #00c7be, #30d158);
+}
+.variantEmerald .blob3 {
+  background: linear-gradient(135deg, #047857, #10b981);
+}
+.variantEmerald .blob4 {
+  background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+}
+
+/* --- THEME VARIANT: Purple (NothingMusic - Lossless OPFS Audio) --- */
+.variantPurple .blob1 {
+  background: linear-gradient(135deg, #7c3aed, #af52de, #bf5af2);
+}
+.variantPurple .blob2 {
+  background: linear-gradient(135deg, #5856d6, #af52de);
+}
+.variantPurple .blob3 {
+  background: linear-gradient(135deg, #db2777, #9333ea);
+}
+.variantPurple .blob4 {
+  background: linear-gradient(135deg, #e9d5ff, #c084fc);
+}
+
+/* --- THEME VARIANT: Amber (NothingCinema - 4K Master Video Engine) --- */
+.variantAmber .blob1 {
+  background: linear-gradient(135deg, #f56300, #ff9f0a, #ffb340);
+}
+.variantAmber .blob2 {
+  background: linear-gradient(135deg, #ff453a, #ff9f0a);
+}
+.variantAmber .blob3 {
+  background: linear-gradient(135deg, #d97706, #f56300);
+}
+.variantAmber .blob4 {
+  background: linear-gradient(135deg, #fed7aa, #fbbf24);
+}
+
+@keyframes floatBlob1 {
+  0% { transform: rotate(12deg) translate(0, 0); }
+  100% { transform: rotate(18deg) translate(6px, -8px); }
+}
+
+@keyframes floatBlob2 {
+  0% { transform: rotate(20deg) translate(0, 0); }
+  100% { transform: rotate(14deg) translate(-6px, 8px); }
+}
+
+@keyframes floatBlob3 {
+  0% { transform: rotate(-10deg) translate(0, 0); }
+  100% { transform: rotate(-4deg) translate(8px, 6px); }
+}
+
+@keyframes floatBlob4 {
+  0% { transform: rotate(-25deg) translate(0, 0); }
+  100% { transform: rotate(-18deg) translate(-8px, -6px); }
+}

@@ -4,13 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './LandingHero.module.css';
 import { Logo } from '../Logo/Logo';
+import { FlagshipCardDeck } from '../FlagshipCardDeck';
 import {
-  MessageSquare,
   Share2,
-  Music,
   Film,
-  ChevronDown,
   ChevronRight,
+  ChevronDown,
   ShieldCheck,
   Zap,
   Globe2,
@@ -36,18 +35,21 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     }
   };
 
-  const flagshipPills = [
+  const flagshipCards = [
     {
       id: 'hero-chat',
       title: 'NothingChat',
       badge: 'P2P Encrypted',
+      subdomain: 'chat.nothingbox.io',
+      rotation: '-2.5deg',
+      variant: 'blue' as const,
       icon: (
         <Image
           src="/nothingchat/icon-mark.svg"
           alt="NothingChat"
-          width={22}
-          height={22}
-          style={{ borderRadius: 4, objectFit: 'contain', display: 'inline-block' }}
+          width={36}
+          height={36}
+          style={{ borderRadius: 8, objectFit: 'contain' }}
         />
       ),
     },
@@ -55,19 +57,25 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
       id: 'hero-drop',
       title: 'NothingDrop',
       badge: '50GB AirDrop',
-      icon: <Share2 size={20} className={styles.pillIconGreen} />,
+      subdomain: 'drop.nothingbox.io',
+      rotation: '1.5deg',
+      variant: 'emerald' as const,
+      icon: <Share2 size={28} color="#111827" strokeWidth={2.2} />,
     },
     {
       id: 'hero-music',
       title: 'NothingMusic',
       badge: 'OPFS Hi-Res',
+      subdomain: 'music.nothingbox.io',
+      rotation: '-1.5deg',
+      variant: 'purple' as const,
       icon: (
         <Image
           src="/nothingmusic/icon-mark.svg"
           alt="NothingMusic"
-          width={18}
-          height={24}
-          style={{ borderRadius: 3, objectFit: 'contain', display: 'inline-block' }}
+          width={28}
+          height={36}
+          style={{ borderRadius: 6, objectFit: 'contain' }}
         />
       ),
     },
@@ -75,7 +83,10 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
       id: 'hero-cinema',
       title: 'NothingCinema',
       badge: '4K Peer Stream',
-      icon: <Film size={20} className={styles.pillIconOrange} />,
+      subdomain: 'cinema.nothingbox.io',
+      rotation: '2deg',
+      variant: 'amber' as const,
+      icon: <Film size={28} color="#111827" strokeWidth={2.2} />,
     },
   ];
 
@@ -104,23 +115,12 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           </p>
         </div>
 
-        {/* Interactive Flagship Jump Strip */}
+        {/* Interactive Flagship Jump Cards (Desktop Grid + Mobile 3D Swipe Stack) */}
         <div className={styles.flagshipStrip}>
-          {flagshipPills.map((pill) => (
-            <button
-              key={pill.id}
-              className={styles.flagshipPillBtn}
-              onClick={() => scrollTo(pill.id)}
-              aria-label={`Jump to ${pill.title}`}
-            >
-              <div className={styles.pillIconWrap}>{pill.icon}</div>
-              <div className={styles.pillTextWrap}>
-                <span className={styles.pillTitle}>{pill.title}</span>
-                <span className={styles.pillBadge}>{pill.badge}</span>
-              </div>
-              <ChevronRight size={14} className={styles.pillChevron} />
-            </button>
-          ))}
+          <FlagshipCardDeck
+            cards={flagshipCards}
+            onCardClick={scrollTo}
+          />
         </div>
 
         {/* Action Button Group */}

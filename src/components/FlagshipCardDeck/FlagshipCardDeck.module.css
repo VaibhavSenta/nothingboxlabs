@@ -1,0 +1,163 @@
+/* FlagshipCardDeck.module.css */
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+/* Desktop View: Wide Row with subtle organic rotations */
+.desktopGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 4px;
+}
+
+/* Mobile Stack View: Hidden on Desktop */
+.mobileStackSection {
+  display: none;
+}
+
+/* Responsive breakpoint: Switch to Stack & Swipe mode on tablets & mobile */
+@media (max-width: 768px) {
+  .desktopGrid {
+    display: none;
+  }
+
+  .mobileStackSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .swipeHintPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #4b5563;
+    background: #f5f5f7;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 9999px;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    user-select: none;
+  }
+
+  .hintSwipeIcon {
+    animation: gentleWiggle 2.4s ease-in-out infinite;
+  }
+
+  /* 3D Stack Stage */
+  .stackStage {
+    position: relative;
+    width: 200px;
+    height: 290px;
+    margin: 0 auto 10px;
+    perspective: 1000px;
+    user-select: none;
+    touch-action: pan-y;
+  }
+
+  .stackedCard {
+    position: absolute !important;
+    left: 50% !important;
+    top: 0 !important;
+    transform-origin: center 85% !important;
+    will-change: transform, opacity;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  /* Card Fling/Cycle Animation: Card flies out to side and tucks into the back of stack */
+  .cardExiting {
+    animation: flingToBack 0.36s cubic-bezier(0.2, 0.85, 0.3, 1) forwards !important;
+    z-index: 25 !important;
+    pointer-events: none !important;
+  }
+
+  .dragging .stackedCard {
+    transition: none !important;
+  }
+
+  /* Pagination Dots */
+  .stackControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
+    user-select: none;
+  }
+
+  .dotsList {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.18);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dot:hover {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .dotActive {
+    width: 22px;
+    border-radius: 9999px;
+    background: #0071e3;
+    box-shadow: 0 2px 6px rgba(0, 113, 227, 0.35);
+  }
+}
+
+@keyframes flingToBack {
+  0% {
+    transform: translateX(-50%) translateY(0px) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(calc(-50% + 125px)) translateY(-24px) rotate(14deg) scale(1.02);
+    opacity: 0.92;
+  }
+  100% {
+    transform: translateX(-50%) translateY(38px) rotate(2deg) scale(0.80);
+    opacity: 0.42;
+  }
+}
+
+@keyframes gentleWiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
