@@ -33,13 +33,14 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
   const touchStartPos = useRef<{ x: number; y: number; time: number }>({ x: 0, y: 0, time: 0 });
   const isDraggingRef = useRef<boolean>(false);
   const lastActionTime = useRef<number>(0);
+  const lastTouchTime = useRef<number>(0);
 
   // Cycle to next card:
   // 1. Current top card flings out to the right with card tilt
   // 2. k increments by 1: behind card becomes top, old top card smoothly slides into bottom of deck
   const cycleToNext = useCallback(() => {
     const now = Date.now();
-    if (now - lastActionTime.current < 360) return; // Debounce active animation
+    if (now - lastActionTime.current < 320) return; // Debounce active animation
     lastActionTime.current = now;
 
     const currentTop = k;
@@ -59,37 +60,48 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!e.touches[0]) return;
     const t = e.touches[0];
     const dx = t.clientX - touchStartPos.current.x;
-    const dy = t.clientY - touchStartPos.current.y;
-
-    // Only engage drag if horizontal movement is distinct
-    if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
-      isDraggingRef.current = true;
-      setDragX(Math.max(-80, Math.min(80, dx)));
-    }
+    isDraggingRef.current = true;
+    setDragX(Math.max(-80, Math.min(80, dx)));
   };
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    const dt = Date.now() - touchStartPos.current.time;
-    const t = e.changedTouches[0];
-    const dx = t.clientX - touchStartPos.current.x;
-    const dy = t.clientY - touchStartPos.current.y;
-    const distance = Math.hypot(dx, dy);
-
+    const t = e.changedTouches?.[0];
     setDragX(0);
 
-    // If tap: minimal movement (< 15px) and short duration (< 450ms)
-    if (distance < 15 && dt < 450) {
+    if (!t) {
       cycleToNext();
       return;
     }
 
-    // If swipe: deliberate horizontal displacement (> 22px)
-    if (Math.abs(dx) > 22) {
+    const dt = Date.now() - touchStartPos.current.time;
+    const dx = t.clientX - touchStartPos.current.x;
+    const dy = t.clientY - touchStartPos.current.y;
+    const absX = Math.abs(dx);
+    const absY = Math.abs(dy);
+
+    lastTouchTime.current = Date.now();
+
+    // 1. Swipe gesture (any horizontal motion > 20px)
+    if (absX > 20) {
       cycleToNext();
       return;
     }
+
+    // 2. Tap gesture (within 35px radius allowance for human thumb, duration < 600ms)
+    if (dt < 600 && absX < 35 && absY < 35) {
+      cycleToNext();
+      return;
+    }
+  };
+
+  // Safe click handler for mouse / desktop DevTools
+  const handleStageClick = () => {
+    // If touch was already handled in the last 500ms, ignore duplicate synthetic click
+    if (Date.now() - lastTouchTime.current < 500) return;
+    cycleToNext();
   };
 
   // Stack calculation for mobile cards
@@ -123,7 +135,7 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
         zIndex: 8,
         opacity: 0.88,
         transform: 'translateX(-50%) translateY(14px) rotate(3deg) scale(0.93)',
-        pointerEvents: 'auto' as const,
+        pointerEvents: 'none' as const,
         filter: 'brightness(0.98)',
       };
     } else if (offset === 2) {
@@ -198,7 +210,7 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchEnd}
-          onClick={cycleToNext}
+          onClick={handleStageClick}
         >
           {cards.map((card, index) => {
             const isTop = (index - k + N) % N === 0;
@@ -216,7 +228,7 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
                 variant={card.variant}
                 className={`${styles.stackedCard} ${isFlinging ? styles.cardFlinging : ''}`}
                 style={getStackStyle(index)}
-                onClick={cycleToNext}
+                onClick={handleStageClick}
                 onActionClick={() => {
                   // Direct jump to demo when "Explore" pill is tapped
                   onCardClick(card.id);
