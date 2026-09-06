@@ -25,65 +25,83 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
   onCardClick,
 }) => {
   const N = cards.length;
-  // k: index of current top item (0 to N-1)
+  // Current top card index (0 to N-1)
   const [k, setK] = useState<number>(0);
-  const [animatingCard, setAnimatingCard] = useState<number | null>(null);
+  const [flingingIndex, setFlingingIndex] = useState<number | null>(null);
   const [dragX, setDragX] = useState<number>(0);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
 
-  const touchStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const hasMovedRef = useRef<boolean>(false);
+  const touchStartPos = useRef<{ x: number; y: number; time: number }>({ x: 0, y: 0, time: 0 });
+  const isDraggingRef = useRef<boolean>(false);
+  const lastActionTime = useRef<number>(0);
 
-  // Cycle to next card: Top card animates out to the back, behind card steps forward
+  // Cycle to next card:
+  // 1. Current top card flings out to the right with card tilt
+  // 2. k increments by 1: behind card becomes top, old top card smoothly slides into bottom of deck
   const cycleToNext = useCallback(() => {
-    if (animatingCard !== null) return;
+    const now = Date.now();
+    if (now - lastActionTime.current < 360) return; // Debounce active animation
+    lastActionTime.current = now;
+
     const currentTop = k;
-    setAnimatingCard(currentTop);
+    setFlingingIndex(currentTop);
 
     setTimeout(() => {
       setK((prevK) => (prevK + 1) % N);
-      setAnimatingCard(null);
-    }, 320);
-  }, [animatingCard, k, N]);
+      setFlingingIndex(null);
+    }, 180);
+  }, [k, N]);
 
-  // Touch handlers: Support gentle touch swipe as well as tap
+  // Touch handlers for mobile devices
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    const touch = e.touches[0];
-    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
-    hasMovedRef.current = false;
-    setIsDragging(true);
+    const t = e.touches[0];
+    touchStartPos.current = { x: t.clientX, y: t.clientY, time: Date.now() };
+    isDraggingRef.current = false;
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    const touch = e.touches[0];
-    const dx = touch.clientX - touchStartRef.current.x;
-    const dy = touch.clientY - touchStartRef.current.y;
+    const t = e.touches[0];
+    const dx = t.clientX - touchStartPos.current.x;
+    const dy = t.clientY - touchStartPos.current.y;
 
-    if (Math.abs(dx) > Math.abs(dy)) {
-      hasMovedRef.current = true;
-      const clampedDx = Math.max(-120, Math.min(120, dx));
-      setDragX(clampedDx);
+    // Only engage drag if horizontal movement is distinct
+    if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
+      isDraggingRef.current = true;
+      setDragX(Math.max(-80, Math.min(80, dx)));
     }
   };
 
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    const threshold = 35; // swipe threshold
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const dt = Date.now() - touchStartPos.current.time;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartPos.current.x;
+    const dy = t.clientY - touchStartPos.current.y;
+    const distance = Math.hypot(dx, dy);
 
-    if (hasMovedRef.current && Math.abs(dragX) > threshold) {
-      // Swiping advances to next card (backward not needed)
-      setDragX(0);
+    setDragX(0);
+
+    // If tap: minimal movement (< 15px) and short duration (< 450ms)
+    if (distance < 15 && dt < 450) {
       cycleToNext();
-    } else {
-      setDragX(0);
+      return;
+    }
+
+    // If swipe: deliberate horizontal displacement (> 22px)
+    if (Math.abs(dx) > 22) {
+      cycleToNext();
+      return;
     }
   };
 
   // Stack calculation for mobile cards
   const getStackStyle = (index: number) => {
-    // If this card is actively running the exit animation, CSS takes over
-    if (index === animatingCard) {
-      return {};
+    // If this card is currently flinging out to the side
+    if (index === flingingIndex) {
+      return {
+        zIndex: 22,
+        opacity: 0.96,
+        transform: 'translateX(calc(-50% + 140px)) translateY(-22px) rotate(16deg) scale(1.02)',
+        pointerEvents: 'none' as const,
+      };
     }
 
     // Relative position from current top item: 0 is top, 1 is 1st behind, etc.
@@ -104,8 +122,8 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
       return {
         zIndex: 8,
         opacity: 0.88,
-        transform: `translateX(-50%) translateY(14px) rotate(3deg) scale(0.93)`,
-        pointerEvents: 'none' as const,
+        transform: 'translateX(-50%) translateY(14px) rotate(3deg) scale(0.93)',
+        pointerEvents: 'auto' as const,
         filter: 'brightness(0.98)',
       };
     } else if (offset === 2) {
@@ -113,7 +131,7 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
       return {
         zIndex: 6,
         opacity: 0.65,
-        transform: `translateX(-50%) translateY(26px) rotate(-3deg) scale(0.86)`,
+        transform: 'translateX(-50%) translateY(26px) rotate(-3deg) scale(0.86)',
         pointerEvents: 'none' as const,
         filter: 'brightness(0.96)',
       };
@@ -122,7 +140,7 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
       return {
         zIndex: 4,
         opacity: 0.42,
-        transform: `translateX(-50%) translateY(38px) rotate(2deg) scale(0.80)`,
+        transform: 'translateX(-50%) translateY(38px) rotate(2deg) scale(0.80)',
         pointerEvents: 'none' as const,
         filter: 'brightness(0.93)',
       };
@@ -161,26 +179,30 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
 
       {/* 2. Mobile View: Interactive Click-to-Cycle 3D Stack */}
       <div className={styles.mobileStackSection}>
-        {/* Helper Hint Pill */}
-        <div className={styles.swipeHintPill}>
+        {/* Helper Hint Pill (Clickable) */}
+        <button
+          type="button"
+          className={styles.swipeHintPill}
+          onClick={cycleToNext}
+          aria-label="Tap to flip card"
+        >
           <Sparkles size={13} className={styles.hintSwipeIcon} />
-          <span>
-            Tap card to flip • <strong>{k + 1}</strong> of {N}
-          </span>
-        </div>
+          <span>Tap card to flip</span>
+        </button>
 
         {/* 3D Stack Stage */}
         <div
           id="mobile-card-stack-stage"
-          className={`${styles.stackStage} ${isDragging ? styles.dragging : ''}`}
+          className={styles.stackStage}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchEnd}
+          onClick={cycleToNext}
         >
           {cards.map((card, index) => {
             const isTop = (index - k + N) % N === 0;
-            const isExiting = index === animatingCard;
+            const isFlinging = index === flingingIndex;
 
             return (
               <GlassBlobCard
@@ -192,14 +214,9 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
                 icon={card.icon}
                 rotation={card.rotation}
                 variant={card.variant}
-                className={`${styles.stackedCard} ${isExiting ? styles.cardExiting : ''}`}
+                className={`${styles.stackedCard} ${isFlinging ? styles.cardFlinging : ''}`}
                 style={getStackStyle(index)}
-                onClick={() => {
-                  // If top card is tapped, cycle to the next card
-                  if (!hasMovedRef.current && isTop && !isExiting) {
-                    cycleToNext();
-                  }
-                }}
+                onClick={cycleToNext}
                 onActionClick={() => {
                   // Direct jump to demo when "Explore" pill is tapped
                   onCardClick(card.id);
@@ -215,18 +232,14 @@ export const FlagshipCardDeck: React.FC<FlagshipCardDeckProps> = ({
           })}
         </div>
 
-        {/* Clean Dot Indicators (No left/right arrow buttons) */}
+        {/* Clean Dot Indicators */}
         <div className={styles.stackControls}>
           <div className={styles.dotsList} role="tablist" aria-label="Card pagination">
             {cards.map((card, idx) => (
               <button
                 key={`dot-${card.id}`}
                 className={`${styles.dot} ${idx === k ? styles.dotActive : ''}`}
-                onClick={() => {
-                  if (animatingCard === null && idx !== k) {
-                    cycleToNext();
-                  }
-                }}
+                onClick={() => setK(idx)}
                 aria-label={`Card ${idx + 1}: ${card.title}`}
                 role="tab"
                 aria-selected={idx === k}

@@ -400,39 +400,64 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .heroSection {
-    padding: 100px 16px 40px;
+    padding: 72px 16px 36px;
     min-height: auto;
   }
-  .mainHeadline {
-    font-size: 38px;
-  }
-  .subHeadline {
-    font-size: 19px;
-  }
-  .bodyDescription {
-    font-size: 15px;
+  .brandHeroEmblem {
+    margin-bottom: 12px;
   }
   .logoFrame {
-    width: 88px;
-    height: 88px;
-    border-radius: 22px;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+  .mainHeroLogo {
+    width: 50px;
+    height: 50px;
+  }
+  .textBlock {
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+  .mainHeadline {
+    font-size: 28px;
+    line-height: 1.12;
+    margin-bottom: 6px;
+    letter-spacing: -0.03em;
+  }
+  .subHeadline {
+    font-size: 15px;
+    line-height: 1.32;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .bodyDescription {
+    font-size: 13px;
+    line-height: 1.45;
+    max-width: 480px;
+    color: #6e6e73;
+  }
+  .flagshipStrip {
+    width: 100%;
+    margin-bottom: 24px;
   }
   .ctaGroup {
     flex-direction: column;
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto 36px;
   }
   .primaryBtn, .secondaryBtn, .tertiaryBtn {
     width: 100%;
     justify-content: center;
   }
-  .flagshipStrip {
-    width: 100%;
-    margin-bottom: 32px;
-  }
   .metricsRibbon {
     grid-template-columns: 1fr;
     padding: 16px;
+  }
+  .metricDivider {
+    display: none;
   }
 }
