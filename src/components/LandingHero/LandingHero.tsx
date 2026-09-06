@@ -103,7 +103,9 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
         {/* Apple Style Main Headline */}
         <div className={styles.textBlock}>
           <h1 className={styles.mainHeadline}>
-            NothingBox Labs<span className={styles.periodAccent}>.</span>
+            NothingBox Labs 
+            <span className={styles.periodAccent}>.</span>
+            <sup className={styles.sup}>Comming Soon.</sup>
           </h1>
           <p className={styles.subHeadline}>
             Engineered for raw browser power. Zero cloud servers.

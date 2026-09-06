@@ -3425,6 +3425,7 @@ __turbopack_context__.v({
   "secondaryBtn": "LandingHero-module__aSlTeq__secondaryBtn",
   "sparkleIcon": "LandingHero-module__aSlTeq__sparkleIcon",
   "subHeadline": "LandingHero-module__aSlTeq__subHeadline",
+  "sup": "LandingHero-module__aSlTeq__sup",
   "tertiaryBtn": "LandingHero-module__aSlTeq__tertiaryBtn",
   "textBlock": "LandingHero-module__aSlTeq__textBlock",
 });
@@ -3588,8 +3589,16 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                     children: "."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 106,
-                                    columnNumber: 28
+                                    lineNumber: 107,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("sup", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].sup,
+                                    children: "Comming Soon."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
+                                    lineNumber: 108,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
@@ -3602,7 +3611,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                             children: "Engineered for raw browser power. Zero cloud servers."
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 108,
+                            lineNumber: 110,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3610,7 +3619,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                             children: "A breakthrough ecosystem of decentralized web applications running purely inside your hardware. From encrypted peer-to-peer communications and 50GB file transfers to high-fidelity audio and 4K cinema streaming. No accounts, no telemetry, zero server dependencies."
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 111,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -3626,12 +3635,12 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                         onCardClick: scrollTo
                     }, void 0, false, {
                         fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                        lineNumber: 120,
+                        lineNumber: 122,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                    lineNumber: 119,
+                    lineNumber: 121,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3646,20 +3655,20 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                     children: "Explore Flagship Suite"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 136,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 128,
+                            lineNumber: 130,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3671,26 +3680,26 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                     children: "Security Architecture"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 143,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 136,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                    lineNumber: 127,
+                    lineNumber: 129,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3706,12 +3715,12 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].iconAmber
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 152,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 151,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3722,7 +3731,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "0 Cloud Servers"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 155,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3730,26 +3739,26 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "100% local browser execution"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 156,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 154,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 148,
+                            lineNumber: 150,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].metricDivider
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 158,
+                            lineNumber: 160,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3762,12 +3771,12 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].iconBlue
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 163,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3778,7 +3787,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "Direct P2P Mesh"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 167,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3786,26 +3795,26 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "Browser-to-browser WebRTC"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 166,
+                                            lineNumber: 168,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 166,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 160,
+                            lineNumber: 162,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].metricDivider
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 170,
+                            lineNumber: 172,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3818,12 +3827,12 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].iconGreen
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 175,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3834,7 +3843,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "End-to-End Encrypted"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 179,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3842,26 +3851,26 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "P2P WebRTC & WebCrypto"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 180,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 176,
+                                    lineNumber: 178,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 172,
+                            lineNumber: 174,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].metricDivider
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 182,
+                            lineNumber: 184,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3874,12 +3883,12 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].iconPurple
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 188,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 185,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3890,7 +3899,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "Hardware Native"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 189,
+                                            lineNumber: 191,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3898,25 +3907,25 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                                             children: "OPFS & WebCodecs performance"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 192,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 184,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                    lineNumber: 147,
+                    lineNumber: 149,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3929,7 +3938,7 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                             children: "Scroll to explore"
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 201,
+                            lineNumber: 203,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -3937,13 +3946,13 @@ const LandingHero = ({ onExploreChat, onExploreSubdomains, onExploreFree })=>{
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingHero$2f$LandingHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].scrollChevron
                         }, void 0, false, {
                             fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                            lineNumber: 202,
+                            lineNumber: 204,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/LandingHero/LandingHero.tsx",
-                    lineNumber: 196,
+                    lineNumber: 198,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

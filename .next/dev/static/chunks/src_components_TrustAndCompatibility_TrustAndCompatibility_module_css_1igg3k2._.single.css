@@ -37,6 +37,7 @@
 .TrustAndCompatibility-module__K6ng5q__eyebrowPill {
   color: #111827;
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   letter-spacing: -.01em;
   background: #ffffffd9;
   border: 1px solid #fffc;
@@ -78,17 +79,17 @@
 }
 
 .TrustAndCompatibility-module__K6ng5q__pillarCard {
-  -webkit-backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   text-align: left;
-  background: #ffffffad;
-  border: 1px solid #ffffffa6;
-  border-radius: 20px;
+  background: #f6f6f6c1;
+  border-radius: 2rem;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
   transition: transform .2s, box-shadow .2s, background-color .2s;
   display: flex;
-  box-shadow: 0 8px 30px #0000000f, 0 1px 3px #00000008;
+  box-shadow: 0 60px 30px -40px #3535354f;
 }
 
 .TrustAndCompatibility-module__K6ng5q__pillarCard:hover {
@@ -99,6 +100,7 @@
 
 .TrustAndCompatibility-module__K6ng5q__pillarIconWrap {
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: #ffffffd9;
   border: 1px solid #fffc;
   border-radius: 12px;
@@ -131,9 +133,10 @@
 
 .TrustAndCompatibility-module__K6ng5q__compatibilityPanel {
   -webkit-backdrop-filter: blur(25px);
-  background: #ffffffb8;
+  backdrop-filter: blur(25px);
+  background: #ffffff58;
   border: 1px solid #ffffffb3;
-  border-radius: 24px;
+  border-radius: 2rem;
   flex-direction: column;
   width: 100%;
   display: flex;
@@ -143,6 +146,7 @@
 
 .TrustAndCompatibility-module__K6ng5q__panelHeader {
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: #ffffff73;
   border-bottom: 1px solid #0000000f;
   justify-content: space-between;
@@ -208,9 +212,10 @@
 
 .TrustAndCompatibility-module__K6ng5q__verifiedBadge {
   -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   background: #ffffffd1;
   border: 1px solid #ffffffd9;
-  border-radius: 14px;
+  border-radius: 2rem;
   flex-shrink: 0;
   align-items: center;
   gap: 10px;
@@ -345,6 +350,7 @@
 .TrustAndCompatibility-module__K6ng5q__statusBadgeActive {
   color: #15803d;
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   background-color: #dcfce7d9;
   border: 1px solid #bbf7d0;
   border-radius: 9999px;
@@ -357,6 +363,7 @@
 .TrustAndCompatibility-module__K6ng5q__statusBadgeFallback {
   color: #b45309;
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   background-color: #fef3c7d9;
   border: 1px solid #fde68a;
   border-radius: 9999px;
@@ -368,6 +375,7 @@
 
 .TrustAndCompatibility-module__K6ng5q__panelFooter {
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background-color: #ffffff73;
   border-top: 1px solid #0000000d;
   padding: 14px 24px;
