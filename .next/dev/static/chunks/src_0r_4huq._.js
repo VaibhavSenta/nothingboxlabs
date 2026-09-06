@@ -1459,29 +1459,19 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                     children: [
                         product.id === 'chat-app' || product.id === 'music-player' ? /* Official Brand Lockup Banners already include the brand emblem and typographic title */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AppleHero$2f$AppleHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].lockupBannerWrap,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    src: product.id === 'chat-app' ? '/nothingchat/lockup-clean.svg' : '/nothingmusic/lockup-clean.svg',
-                                    alt: product.title,
-                                    width: product.id === 'chat-app' ? 340 : 380,
-                                    height: product.id === 'chat-app' ? 78 : 70,
-                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AppleHero$2f$AppleHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].lockupBannerImg,
-                                    priority: true
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 48,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "sr-only",
-                                    children: product.title
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 60,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                src: product.id === 'chat-app' ? '/nothingchat/lockup-clean.svg' : '/nothingmusic/lockup-clean.svg',
+                                alt: product.title,
+                                width: product.id === 'chat-app' ? 340 : 380,
+                                height: product.id === 'chat-app' ? 78 : 70,
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AppleHero$2f$AppleHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].lockupBannerImg,
+                                priority: true
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
+                                lineNumber: 48,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
                             lineNumber: 47,
                             columnNumber: 13
@@ -1494,12 +1484,12 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AppleHero$2f$AppleHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].heroLogoMark
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 64,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 63,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1507,13 +1497,13 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                     children: product.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 66,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                            lineNumber: 63,
+                            lineNumber: 62,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1521,7 +1511,7 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                             children: product.tagline
                         }, void 0, false, {
                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                            lineNumber: 71,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1535,12 +1525,12 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                         children: "Explore Architecture & Specs"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 79,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 74,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1560,7 +1550,7 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 90,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
@@ -1568,19 +1558,19 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AppleHero$2f$AppleHero$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].chevronIcon
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 91,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                            lineNumber: 74,
+                            lineNumber: 73,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1590,12 +1580,12 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                                     children: feat.title
                                 }, feat.id, false, {
                                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 98,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                            lineNumber: 97,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -1611,12 +1601,12 @@ const AppleHero = ({ product, theme = 'titanium', onOpenSpecs, onLaunchApp, sect
                         onOpenSpecs: onOpenSpecs
                     }, void 0, false, {
                         fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                        lineNumber: 108,
+                        lineNumber: 107,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/AppleHero/AppleHero.tsx",
-                    lineNumber: 107,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

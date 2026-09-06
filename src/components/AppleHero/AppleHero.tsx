@@ -57,7 +57,6 @@ export const AppleHero: React.FC<AppleHeroProps> = ({
                 className={styles.lockupBannerImg}
                 priority
               />
-              <h2 className="sr-only">{product.title}</h2>
             </div>
           ) : (
             <>
