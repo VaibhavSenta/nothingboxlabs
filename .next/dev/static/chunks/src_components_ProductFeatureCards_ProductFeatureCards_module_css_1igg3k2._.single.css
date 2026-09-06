@@ -1,0 +1,312 @@
+/* [project]/src/components/ProductFeatureCards/ProductFeatureCards.module.css [app-client] (css) */
+.ProductFeatureCards-module__RW_FOq__cardsContainer {
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  padding: 4px;
+  display: grid;
+}
+
+.ProductFeatureCards-module__RW_FOq__featureCard {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #00000014;
+  border-radius: 20px;
+  flex-direction: column;
+  padding: 24px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px #0000000a, 0 1px 2px #00000005;
+}
+
+.ProductFeatureCards-module__RW_FOq__featureCard:hover {
+  border-color: #0000001f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px #00000014, 0 2px 4px #00000008;
+}
+
+.ProductFeatureCards-module__RW_FOq__highlightCard {
+  background: linear-gradient(#fff 0%, #f9fafb 100%);
+  border: 1px solid #0071e32e;
+  box-shadow: 0 8px 24px #0071e30f, 0 1px 3px #00000008;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardHeader {
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardIconWrap {
+  border-radius: 12px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__blueGlow, .ProductFeatureCards-module__RW_FOq__greenGlow, .ProductFeatureCards-module__RW_FOq__purpleGlow, .ProductFeatureCards-module__RW_FOq__orangeGlow, .ProductFeatureCards-module__RW_FOq__amberGlow, .ProductFeatureCards-module__RW_FOq__cyanGlow {
+  background: #f3f4f6;
+  border: 1px solid #00000014;
+}
+
+.ProductFeatureCards-module__RW_FOq__iconBlue, .ProductFeatureCards-module__RW_FOq__iconGreen, .ProductFeatureCards-module__RW_FOq__iconPurple, .ProductFeatureCards-module__RW_FOq__iconOrange, .ProductFeatureCards-module__RW_FOq__iconAmber, .ProductFeatureCards-module__RW_FOq__iconCyan {
+  color: #111827;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardBadge {
+  color: #4b5563;
+  letter-spacing: -.01em;
+  background: #f3f4f6;
+  border: 1px solid #0000000a;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardTitle {
+  color: #111827;
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardDesc {
+  color: #4b5563;
+  flex: 1;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ProductFeatureCards-module__RW_FOq__visualFlow {
+  background: #f8fafc;
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__flowNode {
+  flex-direction: column;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__nodeLabel {
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ProductFeatureCards-module__RW_FOq__nodeSub {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.ProductFeatureCards-module__RW_FOq__flowLine {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  display: flex;
+  position: relative;
+}
+
+.ProductFeatureCards-module__RW_FOq__flowTag {
+  text-transform: uppercase;
+  color: #0071e3;
+  letter-spacing: .05em;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.ProductFeatureCards-module__RW_FOq__pulseDot {
+  background-color: #0071e3;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 8px #0071e3;
+}
+
+.ProductFeatureCards-module__RW_FOq__cardHighlights {
+  border-top: 1px solid #0000000f;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__highlightItem {
+  color: #374151;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__checkIcon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ProductFeatureCards-module__RW_FOq__benchmarkBox {
+  background: #f8fafc;
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+}
+
+.ProductFeatureCards-module__RW_FOq__benchmarkHeader {
+  color: #374151;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__benchmarkVal {
+  color: #0071e3;
+  font-weight: 700;
+}
+
+.ProductFeatureCards-module__RW_FOq__progressBarWrap {
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  width: 100%;
+  height: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.ProductFeatureCards-module__RW_FOq__progressBarFill {
+  background: linear-gradient(90deg, #0071e3 0%, #38bdf8 100%);
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.ProductFeatureCards-module__RW_FOq__orangeBar {
+  background: linear-gradient(90deg, #f97316 0%, #fbbf24 100%);
+}
+
+.ProductFeatureCards-module__RW_FOq__benchmarkLabels {
+  color: #6b7280;
+  justify-content: space-between;
+  font-size: 10px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__highlightText {
+  color: #111827;
+  font-weight: 600;
+}
+
+.ProductFeatureCards-module__RW_FOq__audioSpecBox {
+  background: #f8fafc;
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__specMetric {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__specLabel {
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.ProductFeatureCards-module__RW_FOq__specValue {
+  color: #8b5cf6;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ProductFeatureCards-module__RW_FOq__specMetricDivider {
+  background-color: #00000014;
+  width: 1px;
+  height: 24px;
+}
+
+.ProductFeatureCards-module__RW_FOq__statsPillRow {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+  display: grid;
+}
+
+.ProductFeatureCards-module__RW_FOq__statMiniCard {
+  text-align: center;
+  background: #f9fafb;
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 6px;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__miniStatNum {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ProductFeatureCards-module__RW_FOq__miniStatLbl {
+  color: #6b7280;
+  margin-top: 1px;
+  font-size: 10px;
+}
+
+.ProductFeatureCards-module__RW_FOq__badgeRow {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  display: flex;
+}
+
+.ProductFeatureCards-module__RW_FOq__techPill {
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #0000000a;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  .ProductFeatureCards-module__RW_FOq__cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/*# sourceMappingURL=src_components_ProductFeatureCards_ProductFeatureCards_module_css_1igg3k2._.single.css.map*/

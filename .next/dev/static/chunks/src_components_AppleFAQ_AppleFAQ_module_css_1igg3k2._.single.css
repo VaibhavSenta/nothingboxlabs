@@ -1,0 +1,195 @@
+/* [project]/src/components/AppleFAQ/AppleFAQ.module.css [app-client] (css) */
+.AppleFAQ-module__goIM3W__section {
+  background-color: #fff;
+  border-top: 1px solid #0000000d;
+  justify-content: center;
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__container {
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__header {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 640px;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__eyebrowPill {
+  color: #111827;
+  letter-spacing: -.01em;
+  background-color: #f3f4f6;
+  border: 1px solid #0000000f;
+  border-radius: 9999px;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+}
+
+.AppleFAQ-module__goIM3W__eyebrowIcon {
+  color: #111827;
+}
+
+.AppleFAQ-module__goIM3W__headline {
+  color: #111827;
+  letter-spacing: -.03em;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.AppleFAQ-module__goIM3W__subhead {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.AppleFAQ-module__goIM3W__accordionList {
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__faqCard {
+  background-color: #fbfbfd;
+  border: 1px solid #00000014;
+  border-radius: 18px;
+  transition: all .2s;
+  overflow: hidden;
+}
+
+.AppleFAQ-module__goIM3W__faqCard:hover {
+  background-color: #f8fafc;
+  border-color: #00000024;
+}
+
+.AppleFAQ-module__goIM3W__faqCardOpen {
+  background-color: #fff;
+  border-color: #0071e340;
+  box-shadow: 0 4px 20px #0071e30f;
+}
+
+.AppleFAQ-module__goIM3W__faqButton {
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__questionText {
+  color: #111827;
+  letter-spacing: -.015em;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.AppleFAQ-module__goIM3W__iconWrap {
+  background: #0000000a;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  transition: transform .25s cubic-bezier(.16, 1, .3, 1), background-color .2s;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__iconWrapRotated {
+  background: #00000014;
+  transform: rotate(180deg);
+}
+
+.AppleFAQ-module__goIM3W__chevronIcon {
+  color: #111827;
+  transition: color .2s;
+}
+
+.AppleFAQ-module__goIM3W__faqCardOpen .AppleFAQ-module__goIM3W__chevronIcon {
+  color: #111827;
+}
+
+.AppleFAQ-module__goIM3W__answerWrapper {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .3s cubic-bezier(.16, 1, .3, 1), opacity .25s;
+  overflow: hidden;
+}
+
+.AppleFAQ-module__goIM3W__answerWrapperOpen {
+  opacity: 1;
+  max-height: 260px;
+}
+
+.AppleFAQ-module__goIM3W__answerContent {
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px 20px;
+  display: flex;
+}
+
+.AppleFAQ-module__goIM3W__answerText {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.AppleFAQ-module__goIM3W__categoryTag {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #111827;
+  background: #f3f4f6;
+  border: 1px solid #0000000f;
+  border-radius: 6px;
+  align-self: flex-start;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .AppleFAQ-module__goIM3W__section {
+    padding: 50px 16px;
+  }
+
+  .AppleFAQ-module__goIM3W__headline {
+    font-size: 28px;
+  }
+
+  .AppleFAQ-module__goIM3W__faqButton {
+    padding: 16px 18px;
+  }
+
+  .AppleFAQ-module__goIM3W__questionText {
+    font-size: 15px;
+  }
+
+  .AppleFAQ-module__goIM3W__answerContent {
+    padding: 0 18px 16px;
+  }
+}
+
+/*# sourceMappingURL=src_components_AppleFAQ_AppleFAQ_module_css_1igg3k2._.single.css.map*/
