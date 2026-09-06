@@ -1,0 +1,251 @@
+/* [project]/src/components/ProductModal/ProductModal.module.css [app-client] (css) */
+.ProductModal-module__ndtGLq__backdrop {
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  background-color: #0006;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  animation: .2s ease-out ProductModal-module__ndtGLq__fadeIn;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+@keyframes ProductModal-module__ndtGLq__fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ProductModal-module__ndtGLq__modalCard {
+  border-radius: var(--radius-lg);
+  background-color: #fff;
+  border: 1px solid #0000001a;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  display: flex;
+  overflow-y: auto;
+  box-shadow: 0 30px 70px #00000026;
+}
+
+.ProductModal-module__ndtGLq__modalHeader {
+  background-color: #fbfbfd;
+  border-bottom: 1px solid #00000014;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__headerInfo {
+  flex-direction: column;
+  gap: 6px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__tagGroup {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__titleRow {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__modalLogo {
+  flex-shrink: 0;
+}
+
+.ProductModal-module__ndtGLq__title {
+  color: #1d1d1f;
+  letter-spacing: -.02em;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ProductModal-module__ndtGLq__subdomain {
+  color: #0071e3;
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+
+.ProductModal-module__ndtGLq__closeBtn {
+  color: #6e6e73;
+  background-color: #f5f5f7;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  transition: all .15s;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__closeBtn:hover {
+  color: #1d1d1f;
+  background-color: #e5e5ea;
+}
+
+.ProductModal-module__ndtGLq__modalBody {
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__sectionBlock {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__sectionTitle {
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ProductModal-module__ndtGLq__purposeText {
+  color: #1d1d1f;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.ProductModal-module__ndtGLq__archGrid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  display: grid;
+}
+
+.ProductModal-module__ndtGLq__archCard {
+  border-radius: var(--radius-md);
+  background-color: #f5f5f7;
+  border: 1px solid #0000000f;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__archTitleRow {
+  color: #6e6e73;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__archIconBlue, .ProductModal-module__ndtGLq__archIconCyan, .ProductModal-module__ndtGLq__archIconPurple, .ProductModal-module__ndtGLq__archIconGreen {
+  color: #111827;
+}
+
+.ProductModal-module__ndtGLq__archValue {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: #1d1d1f;
+  line-height: 1.4;
+}
+
+.ProductModal-module__ndtGLq__featuresList {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__featureRow {
+  border-radius: var(--radius-md);
+  background-color: #fbfbfd;
+  border: 1px solid #0000000f;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__checkIcon {
+  color: #34c759;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ProductModal-module__ndtGLq__featureInfo {
+  flex-direction: column;
+  gap: 2px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__featureTitle {
+  color: #1d1d1f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ProductModal-module__ndtGLq__featureDesc {
+  color: #6e6e73;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ProductModal-module__ndtGLq__specsTable {
+  border-radius: var(--radius-md);
+  border: 1px solid #00000014;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
+
+.ProductModal-module__ndtGLq__specTableRow {
+  background-color: #fff;
+  border-bottom: 1px solid #0000000f;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  display: flex;
+}
+
+.ProductModal-module__ndtGLq__specTableRow:last-child {
+  border-bottom: none;
+}
+
+.ProductModal-module__ndtGLq__specKey {
+  color: #6e6e73;
+  font-size: 13px;
+}
+
+.ProductModal-module__ndtGLq__specVal {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+.ProductModal-module__ndtGLq__modalFooter {
+  background-color: #fbfbfd;
+  border-top: 1px solid #00000014;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .ProductModal-module__ndtGLq__archGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_components_ProductModal_ProductModal_module_css_1igg3k2._.single.css.map*/

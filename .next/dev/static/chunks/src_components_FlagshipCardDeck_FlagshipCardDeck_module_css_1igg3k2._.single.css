@@ -1,0 +1,176 @@
+/* [project]/src/components/FlagshipCardDeck/FlagshipCardDeck.module.css [app-client] (css) */
+.FlagshipCardDeck-module__MnO-rW__container {
+  width: 100%;
+  position: relative;
+}
+
+.FlagshipCardDeck-module__MnO-rW__desktopGrid {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 4px;
+  display: flex;
+}
+
+.FlagshipCardDeck-module__MnO-rW__mobileStackSection {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .FlagshipCardDeck-module__MnO-rW__desktopGrid {
+    display: none;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__mobileStackSection {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__swipeHintPill {
+    color: #4b5563;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    background: #f5f5f7;
+    border: 1px solid #00000014;
+    border-radius: 9999px;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all .2s;
+    display: inline-flex;
+    box-shadow: 0 1px 4px #00000008;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__swipeHintPill:active {
+    background: #e5e5ea;
+    transform: scale(.96);
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__hintSwipeIcon {
+    animation: 2.4s ease-in-out infinite FlagshipCardDeck-module__MnO-rW__gentleWiggle;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__stackStage {
+    perspective: 1000px;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+    cursor: pointer;
+    width: 200px;
+    height: 275px;
+    margin: 0 auto 6px;
+    position: relative;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__stackedCard {
+    will-change: transform, opacity;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1), opacity .32s, box-shadow .32s;
+    transform-origin: 50% 85% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__cardFlinging {
+    transition: transform .2s cubic-bezier(.2, .8, .3, 1), opacity .2s !important;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__dragging .FlagshipCardDeck-module__MnO-rW__stackedCard {
+    transition: none !important;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__stackControls {
+    -webkit-user-select: none;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__dotsList {
+    align-items: center;
+    gap: 7px;
+    display: flex;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__dot {
+    cursor: pointer;
+    background: #0000002e;
+    border: none;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    transition: all .28s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__dot:hover {
+    background: #00000059;
+  }
+
+  .FlagshipCardDeck-module__MnO-rW__dotActive {
+    background: #0071e3;
+    border-radius: 9999px;
+    width: 22px;
+    box-shadow: 0 2px 6px #0071e359;
+  }
+}
+
+@keyframes FlagshipCardDeck-module__MnO-rW__flingToBack {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%)translateY(0)rotate(0)scale(1);
+  }
+
+  45% {
+    opacity: .92;
+    transform: translateX(calc(125px - 50%))translateY(-24px)rotate(14deg)scale(1.02);
+  }
+
+  100% {
+    opacity: .42;
+    transform: translateX(-50%)translateY(38px)rotate(2deg)scale(.8);
+  }
+}
+
+@keyframes FlagshipCardDeck-module__MnO-rW__gentleWiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-4px);
+  }
+
+  40% {
+    transform: translateX(4px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+/*# sourceMappingURL=src_components_FlagshipCardDeck_FlagshipCardDeck_module_css_1igg3k2._.single.css.map*/
