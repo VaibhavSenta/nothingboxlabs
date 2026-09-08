@@ -116,52 +116,52 @@ export const CORE_PRODUCTS: CoreProduct[] = [
     slug: 'music',
     subdomain: 'music.nothingboxlabs.com',
     title: 'NothingMusic',
-    tagline: 'Distraction-free audio streaming cached locally in browser OPFS.',
-    category: 'Audio Streaming',
+    tagline: 'Social timestamp snippet sharing powered by official YouTube Player API.',
+    category: 'Audio Discovery',
     status: 'In Development',
-    corePurpose: 'A minimalist, high-end audio streaming utility powered by YouTube API with zero video ads and persistent Origin Private File System caching.',
+    corePurpose: 'A collaborative music experience built on the official YouTube Player API. Clip, tag, and send friends exact song moments and drops (e.g. 0:45 to 1:15) with zero latency, full creator attribution, and zero DRM circumvention.',
     iconName: 'Music',
     accentColor: '#af52de',
     gradient: 'linear-gradient(135deg, #af52de 0%, #ff2d55 100%)',
     features: [
       {
         id: 'm-1',
-        title: 'Ad-Free Minimalist UI',
-        description: 'Streams pure high-fidelity audio tracks without video clutter, commercial banners, or interruptions, styled like Apple Music.',
-        badge: 'Ad-Free Experience',
-        apiIntegration: 'YouTube Data & Audio Streaming Core'
+        title: 'Precision Timestamp Sharing',
+        description: 'Highlight and share exact drops, solos, or intros with friends using native YouTube start/end parameter links.',
+        badge: 'Drop & Hook Snippets',
+        apiIntegration: 'YouTube IFrame Player API & Timestamp Markers'
       },
       {
         id: 'm-2',
-        title: 'OPFS Audio Caching System',
-        description: 'Streamed audio is automatically cached inside the browser’s Origin Private File System for zero-buffering playback on network dips.',
-        badge: 'Origin Private File System',
-        apiIntegration: 'FileSystemDirectoryHandle (OPFS)'
+        title: 'Official YouTube Streaming Engine',
+        description: 'Audio and visual playback stream directly through YouTube’s licensed player framework, ensuring full creator attribution and views.',
+        badge: '100% Legal & Attributed',
+        apiIntegration: 'YouTube Data v3 & Embed Framework'
       },
       {
         id: 'm-3',
-        title: 'Bypasses Token Expiration',
-        description: 'Cached tracks eliminate YouTube temporary stream token expiration, enabling repeat plays instantly without re-requesting stream URLs.',
-        badge: 'Smart Expiry Bypass',
-        apiIntegration: 'Cache Persistence Layer'
+        title: 'Instant Social Drop Link Generator',
+        description: 'Generate one-tap snippet links ready to paste into NothingChat, WhatsApp, or Twitter that open straight to the highlight.',
+        badge: 'Social Drop Sync',
+        apiIntegration: 'Web Share API & URL Hash Routing'
       },
       {
         id: 'm-4',
-        title: 'Offline-Ready Track Library',
-        description: 'Previously heard songs load instantaneously even on spotty flight Wi-Fi or offline subway commutes.',
-        badge: 'Instant Playback',
-        apiIntegration: 'Web Audio Graph + MediaSession API'
+        title: 'Web Audio Visualizer & Waveforms',
+        description: 'Real-time HTML5 audio frequency spectrum analysis with fluid responsive waveform graphs and zero video clutter.',
+        badge: 'Audio Frequency Graph',
+        apiIntegration: 'Web Audio API (AnalyserNode)'
       }
     ],
     architecture: {
-      technology: ['OPFS (Origin Private File System)', 'Web Audio API', 'MediaSession API', 'YouTube Core Proxy'],
-      storageStrategy: 'Browser OPFS virtual partition (multi-gigabyte audio cache)',
-      networkLayer: 'Byte-range audio requests with streaming fetch pipeline',
-      memoryManagement: 'OPFS streaming file handles with minimal heap memory footstep',
+      technology: ['YouTube IFrame Player API', 'Web Audio API', 'MediaSession API', 'Next.js Client Engine'],
+      storageStrategy: 'Local favorites and timestamp bookmark markers saved in client LocalStorage/IndexedDB',
+      networkLayer: 'Standard HTTPS stream directly from official YouTube CDN servers',
+      memoryManagement: 'Lightweight client-side player instance with zero server streaming overhead',
       keyBenefits: [
-        'Zero buffering once song cached to OPFS',
-        'Background lockscreen controls via native MediaSession API',
-        'Apple Music fluid aesthetic without video bloat'
+        'Zero copyright or licensing friction (Official YouTube Player)',
+        'Friends listen straight to the best hook with one click',
+        'Original artists and creators receive 100% of views and monetization'
       ]
     },
     subdomainTarget: 'https://music.nothingboxlabs.com'

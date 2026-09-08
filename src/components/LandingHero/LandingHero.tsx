@@ -39,8 +39,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     {
       id: 'hero-chat',
       title: 'NothingChat',
-      badge: 'P2P Encrypted',
-      subdomain: 'chat.nothingbox.io',
+      badge: 'Encrypted',
+      subdomain: 'chat.nothingbox.in',
       rotation: '-2.5deg',
       variant: 'blue' as const,
       icon: (
@@ -56,8 +56,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     {
       id: 'hero-drop',
       title: 'NothingDrop',
-      badge: '50GB AirDrop',
-      subdomain: 'drop.nothingbox.io',
+      badge: 'Direct AirDrop',
+      subdomain: 'drop.nothingbox.in',
       rotation: '1.5deg',
       variant: 'emerald' as const,
       icon: <Share2 size={28} color="#111827" strokeWidth={2.2} />,
@@ -65,8 +65,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     {
       id: 'hero-music',
       title: 'NothingMusic',
-      badge: 'OPFS Hi-Res',
-      subdomain: 'music.nothingbox.io',
+      badge: 'Listen to the Mood',
+      subdomain: 'music.nothingbox.in',
       rotation: '-1.5deg',
       variant: 'purple' as const,
       icon: (
@@ -82,8 +82,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     {
       id: 'hero-cinema',
       title: 'NothingCinema',
-      badge: '4K Peer Stream',
-      subdomain: 'cinema.nothingbox.io',
+      badge: 'Offline Web Player',
+      subdomain: 'cinema.nothingbox.in',
       rotation: '2deg',
       variant: 'amber' as const,
       icon: <Film size={28} color="#111827" strokeWidth={2.2} />,
@@ -112,7 +112,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           </p>
           <p className={styles.bodyDescription}>
             A breakthrough ecosystem of decentralized web applications running purely inside your hardware.
-            From encrypted peer-to-peer communications and 50GB file transfers to high-fidelity audio and 4K cinema streaming.
+            From encrypted peer-to-peer communications and high-speed direct file transfers to high-fidelity audio and 4K cinema streaming.
             No accounts, no telemetry, zero server dependencies.
           </p>
         </div>

@@ -221,45 +221,45 @@ export const ProductFeatureCards: React.FC<ProductFeatureCardsProps> = ({
   if (product.id === 'music-player') {
     return (
       <div className={styles.cardsContainer}>
-        {/* Card 1: OPFS Virtual RAM */}
+        {/* Card 1: Precision Timestamp & Drop Sharing */}
         <div className={`${styles.featureCard} ${styles.highlightCard}`}>
           <div className={styles.cardHeader}>
             <div className={`${styles.cardIconWrap} ${styles.purpleGlow}`}>
-              <HardDrive size={22} className={styles.iconPurple} />
+              <Music size={22} className={styles.iconPurple} />
             </div>
-            <span className={styles.cardBadge}>FileSystemSyncAccessHandle</span>
+            <span className={styles.cardBadge}>Official YouTube Player API</span>
           </div>
-          <h3 className={styles.cardTitle}>OPFS Virtual RAM Engine</h3>
+          <h3 className={styles.cardTitle}>Precision Timestamp Snippet Engine</h3>
           <p className={styles.cardDesc}>
-            Streams directly from the browser&apos;s Origin Private File System using low-level synchronous access handles. Cache gigabytes of lossless audio while maintaining a lightweight ~118MB memory footprint.
+            Clip, tag, and send friends the exact hook or drop of any song (e.g. 0:45 to 1:15). Streams natively through the official YouTube Player framework with zero latency and full creator attribution.
           </p>
 
           {/* Audio Spec Visualization */}
           <div className={styles.audioSpecBox}>
             <div className={styles.specMetric}>
-              <span className={styles.specLabel}>Sampling Rate</span>
-              <span className={styles.specValue}>192 kHz Master</span>
+              <span className={styles.specLabel}>Snippet Range</span>
+              <span className={styles.specValue}>0:45 ➔ 1:15 Drop</span>
             </div>
             <div className={styles.specMetricDivider}></div>
             <div className={styles.specMetric}>
-              <span className={styles.specLabel}>Bit Depth</span>
-              <span className={styles.specValue}>24-Bit Studio</span>
+              <span className={styles.specLabel}>Attribution</span>
+              <span className={styles.specValue}>100% Creator</span>
             </div>
             <div className={styles.specMetricDivider}></div>
             <div className={styles.specMetric}>
-              <span className={styles.specLabel}>Latency</span>
-              <span className={styles.specValue}>&lt; 5ms Buffer</span>
+              <span className={styles.specLabel}>Copyright</span>
+              <span className={styles.specValue}>Zero Friction</span>
             </div>
           </div>
 
           <div className={styles.cardHighlights}>
             <div className={styles.highlightItem}>
               <CheckCircle2 size={14} className={styles.checkIcon} />
-              <span>Native support for FLAC, ALAC, WAV, & DSD</span>
+              <span>One-tap share link for NothingChat, WhatsApp, & web</span>
             </div>
             <div className={styles.highlightItem}>
               <CheckCircle2 size={14} className={styles.checkIcon} />
-              <span>100% offline playback with zero network queries</span>
+              <span>Direct official YouTube embed streams with full licensing integrity</span>
             </div>
           </div>
         </div>

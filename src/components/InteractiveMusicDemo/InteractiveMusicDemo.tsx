@@ -174,42 +174,42 @@ export const InteractiveMusicDemo: React.FC = () => {
           </div>
         </div>
 
-        {/* OPFS Caching Architecture Inspector */}
+        {/* Official YouTube API & Snippet Architecture Inspector */}
         <div className={styles.opfsInspector}>
           <div className={styles.opfsHeader}>
             <div className={styles.opfsIconWrap}>
-              <HardDrive size={18} className={styles.opfsIcon} />
+              <Music2 size={18} className={styles.opfsIcon} />
             </div>
             <div>
-              <span className={styles.opfsTitle}>Origin Private File System</span>
-              <span className={styles.opfsSubtitle}>Zero Buffering & Expiry Bypass</span>
+              <span className={styles.opfsTitle}>Official YouTube Player Engine</span>
+              <span className={styles.opfsSubtitle}>Precision Timestamp & Snippet Sharing</span>
             </div>
           </div>
 
           <div className={styles.opfsMetricCard}>
             <div className={styles.opfsRow}>
-              <span className={styles.opfsLabel}>Cache Partition Status:</span>
+              <span className={styles.opfsLabel}>Streaming Framework:</span>
               <span className={styles.opfsValueGreen}>
                 <CheckCircle2 size={13} className={styles.greenCheck} />
-                Mounted in OPFS Root
+                YouTube IFrame API (Verified)
               </span>
             </div>
             <div className={styles.opfsRow}>
-              <span className={styles.opfsLabel}>Current Audio Chunk:</span>
-              <span className={styles.opfsValueMono}>{currentTrack.size} Cached (100%)</span>
+              <span className={styles.opfsLabel}>Selected Highlight Range:</span>
+              <span className={styles.opfsValueMono}>0:45 ➔ 1:15 (The Drop • 30s)</span>
             </div>
             <div className={styles.opfsRow}>
-              <span className={styles.opfsLabel}>Audio Engine:</span>
-              <span className={styles.opfsValueCyan}>Web Audio Synthesizer (Active)</span>
+              <span className={styles.opfsLabel}>Creator Attribution:</span>
+              <span className={styles.opfsValueCyan}>100% Views & Monetization to Artist</span>
             </div>
             <div className={styles.opfsRow}>
-              <span className={styles.opfsLabel}>Offline Readiness:</span>
-              <span className={styles.opfsValuePurple}>Instant Replay Active</span>
+              <span className={styles.opfsLabel}>Social Snippet Link:</span>
+              <span className={styles.opfsValuePurple}>youtube.com/watch?start=45&end=75</span>
             </div>
           </div>
 
           <div className={styles.cachePlaylist}>
-            <span className={styles.playlistLabel}>Cached Track Handles (OPFS):</span>
+            <span className={styles.playlistLabel}>Select Song Highlight to Share:</span>
             <div className={styles.playlistItems}>
               {playlist.map((track, idx) => (
                 <div
@@ -223,7 +223,7 @@ export const InteractiveMusicDemo: React.FC = () => {
                     <span className={styles.itemNumber}>{idx + 1}</span>
                     <span className={styles.itemSongName}>{track.title}</span>
                   </div>
-                  <span className={styles.itemSizeBadge}>{track.size}</span>
+                  <span className={styles.itemSizeBadge}>Snippet Ready</span>
                 </div>
               ))}
             </div>

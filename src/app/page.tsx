@@ -12,11 +12,13 @@ import { TrustAndCompatibility } from '../components/TrustAndCompatibility/Trust
 import { AppleFAQ } from '../components/AppleFAQ/AppleFAQ';
 import { AppleFreeEcosystem } from '../components/AppleFreeEcosystem/AppleFreeEcosystem';
 import { ProductModal } from '../components/ProductModal/ProductModal';
+import { LegalModal, LegalTabType } from '../components/LegalModal/LegalModal';
 import { Footer } from '../components/Footer/Footer';
 
 export default function Home() {
   const [selectedProductForModal, setSelectedProductForModal] =
     useState<CoreProduct | null>(null);
+  const [legalModalTab, setLegalModalTab] = useState<LegalTabType | null>(null);
 
   const handleOpenSpecs = (product: CoreProduct) => {
     setSelectedProductForModal(product);
@@ -108,12 +110,19 @@ export default function Home() {
       <AppleFreeEcosystem onOpenSpecsBySlug={handleOpenSpecsBySlug} />
 
       {/* Apple 5-Column Directory & Legal Footnotes Footer */}
-      <Footer />
+      <Footer onOpenLegal={(tab) => setLegalModalTab(tab)} />
 
       {/* Apple-Style Technical Specification Sheet Modal */}
       <ProductModal
         product={selectedProductForModal}
         onClose={() => setSelectedProductForModal(null)}
+      />
+
+      {/* Regulatory, Terms of Service, & Trademark Compliance Modal */}
+      <LegalModal
+        isOpen={!!legalModalTab}
+        initialTab={legalModalTab || 'trademark'}
+        onClose={() => setLegalModalTab(null)}
       />
     </main>
   );

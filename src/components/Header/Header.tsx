@@ -96,19 +96,19 @@ export const Header: React.FC<HeaderProps> = ({
     },
     {
       label: 'NothingDrop',
-      desc: '50GB Direct File Transfer',
+      desc: 'Direct P2P File Transfer',
       target: 'hero-drop',
       icon: <Share2 size={18} className={styles.mobileIconGreen} />,
     },
     {
       label: 'NothingMusic',
-      desc: 'OPFS Lossless Audio',
+      desc: 'Listen to the Mood',
       target: 'hero-music',
       icon: <Music size={18} className={styles.mobileIconPurple} />,
     },
     {
       label: 'NothingCinema',
-      desc: '4K Hardware Media Stream',
+      desc: 'Offline Web Player',
       target: 'hero-cinema',
       icon: <Film size={18} className={styles.mobileIconOrange} />,
     },

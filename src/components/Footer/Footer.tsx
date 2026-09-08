@@ -3,7 +3,11 @@ import styles from './Footer.module.css';
 import { Logo } from '../Logo/Logo';
 import { ChevronRight } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+export interface FooterProps {
+  onOpenLegal?: (tab: 'trademark' | 'terms' | 'p2p' | 'privacy' | 'music') => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
   return (
     <footer id="apple-footer" className={styles.footer}>
       <div className={styles.container}>
@@ -92,10 +96,40 @@ export const Footer: React.FC = () => {
               <li><a href="#main-header" className={styles.colLink}>Newsroom</a></li>
               <li><a href="https://status.nothingboxlabs.com" className={styles.colLink}>System Status</a></li>
               <li><a href="https://github.com/VaibhavSenta/nothingboxlabs" target="_blank" rel="noreferrer" className={styles.colLink}>GitHub Repository</a></li>
-              <li><a href="#promo-grid" className={styles.colLink}>Performance Benchmarks</a></li>
-              <li><a href="#apple-ribbon" className={styles.colLink}>Contact Engineering</a></li>
+              <li>
+                <button
+                  type="button"
+                  className={styles.legalBtn}
+                  onClick={() => onOpenLegal?.('p2p')}
+                >
+                  P2P Terms of Service
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={styles.legalBtn}
+                  onClick={() => onOpenLegal?.('trademark')}
+                >
+                  Trademark Notice
+                </button>
+              </li>
             </ul>
           </div>
+        </div>
+
+        {/* Independent Platform Trademark Notice Box */}
+        <div className={styles.trademarkNoticeBox}>
+          <p className={styles.trademarkDisclaimer}>
+            <strong>NothingBox Labs is an independent platform and is not affiliated, associated, authorized, or endorsed by Nothing Technology Limited.</strong>
+            <button
+              type="button"
+              className={styles.trademarkLearnMore}
+              onClick={() => onOpenLegal?.('trademark')}
+            >
+              Legal & Trademark Details
+            </button>
+          </p>
         </div>
 
         {/* Apple Copyright Bottom Bar */}
@@ -105,19 +139,51 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className={styles.legalLinks}>
-            <a href="#main-header" className={styles.legalLink}>Privacy Policy</a>
+            <button
+              type="button"
+              className={styles.legalBtn}
+              onClick={() => onOpenLegal?.('privacy')}
+            >
+              Privacy Policy
+            </button>
             <span className={styles.legalDivider}>|</span>
-            <a href="#main-header" className={styles.legalLink}>Terms of Use</a>
+            <button
+              type="button"
+              className={styles.legalBtn}
+              onClick={() => onOpenLegal?.('terms')}
+            >
+              Terms of Use
+            </button>
             <span className={styles.legalDivider}>|</span>
-            <a href="#main-header" className={styles.legalLink}>Sales Policy</a>
+            <button
+              type="button"
+              className={styles.legalBtn}
+              onClick={() => onOpenLegal?.('p2p')}
+            >
+              P2P Terms
+            </button>
             <span className={styles.legalDivider}>|</span>
-            <a href="#main-header" className={styles.legalLink}>Legal</a>
+            <button
+              type="button"
+              className={styles.legalBtn}
+              onClick={() => onOpenLegal?.('music')}
+            >
+              Music Compliance
+            </button>
+            <span className={styles.legalDivider}>|</span>
+            <button
+              type="button"
+              className={styles.legalBtn}
+              onClick={() => onOpenLegal?.('trademark')}
+            >
+              Legal
+            </button>
             <span className={styles.legalDivider}>|</span>
             <a href="#subdomain-carousel" className={styles.legalLink}>Site Map</a>
           </div>
 
           <div className={styles.localeSelector}>
-            United States (English)
+            India & Global (English)
           </div>
         </div>
       </div>
